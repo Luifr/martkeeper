@@ -1,0 +1,25 @@
+# The .godot folder contains local cache and imported data. 
+# It is unique to each machine.
+.godot/
+
+# These are the build outputs. They are regenerated every time you build.
+[Bb]in/
+[Oo]bj/
+
+# NuGet packages are restored automatically; don't commit the cache.
+# (Note: .csproj and .sln are NOT in this list because we MUST keep them)
+packages/
+
+# Metadata
+.DS_Store
+Thumbs.db
+
+# Settings
+.vs/
+.idea/
+*.sln.cache
+*.csproj.user
+
+# Hidden folders for internal use
+exports/
+imports/
