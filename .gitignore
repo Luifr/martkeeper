@@ -2,7 +2,7 @@
 # It is unique to each machine.
 .godot/
 
-# These are the build outputs. They are regenerated every time you build.
+# These are the build output or generated files
 [Bb]in/
 [Oo]bj/
 
