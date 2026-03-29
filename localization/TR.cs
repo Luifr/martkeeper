@@ -10,6 +10,7 @@ public readonly struct TrKey
 
     // --- Generated Keys ---
     public static readonly TrKey HELLO_WORLD = new TrKey("HELLO_WORLD");
+    public static readonly TrKey BANANA = new TrKey("BANANA");
 
     // --- Localization Logic ---
 
@@ -28,4 +29,5 @@ public readonly struct TrKey
 public static class TR
 {
     public static TrKey HELLO_WORLD => TrKey.HELLO_WORLD;
+    public static TrKey BANANA => TrKey.BANANA;
 }

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://ul0nqkirfhyb"]
+
+[ext_resource type="Script" uid="uid://bwaybma0jj0tp" path="res://scenes/entities/person/Person.cs" id="1_v8cm0"]
+[ext_resource type="PackedScene" uid="uid://ncvdm74ad34d" path="res://scenes/entities/person/hand/hand.tscn" id="2_o3o0c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y1cjr"]
+radius = 38.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sei54"]
+radius = 14.035668
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kopis"]
+radius = 4.1231055
+
+[node name="Person" type="RigidBody2D" unique_id=1602392041]
+linear_damp = 5.0
+script = ExtResource("1_v8cm0")
+
+[node name="HeadShape" type="CollisionShape2D" parent="." unique_id=44756596]
+shape = SubResource("CircleShape2D_y1cjr")
+debug_color = Color(0, 0, 0, 1)
+
+[node name="LeftShoulderShape" type="CollisionShape2D" parent="." unique_id=1309957009]
+position = Vector2(0, -35)
+shape = SubResource("CircleShape2D_sei54")
+debug_color = Color(0, 0, 0, 1)
+
+[node name="LeftHand" parent="LeftShoulderShape" unique_id=1435433288 instance=ExtResource("2_o3o0c")]
+unique_name_in_owner = true
+position = Vector2(15, 0)
+
+[node name="RightShoulderShape" type="CollisionShape2D" parent="." unique_id=584100301]
+position = Vector2(0, 35)
+shape = SubResource("CircleShape2D_sei54")
+debug_color = Color(0, 0, 0, 1)
+
+[node name="RightHand" parent="RightShoulderShape" unique_id=520462932 instance=ExtResource("2_o3o0c")]
+unique_name_in_owner = true
+position = Vector2(15, 0)
+
+[node name="NoseShape" type="CollisionShape2D" parent="." unique_id=26918014]
+position = Vector2(38, 0)
+shape = SubResource("CircleShape2D_kopis")
+debug_color = Color(0, 0, 0, 1)

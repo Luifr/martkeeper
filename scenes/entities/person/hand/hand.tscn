@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ncvdm74ad34d"]
+
+[ext_resource type="Script" uid="uid://y460mgdvk38c" path="res://scenes/entities/person/hand/Hand.cs" id="1_1u5i1"]
+
+[node name="Hand" type="Node2D" unique_id=1435433288]
+script = ExtResource("1_1u5i1")
+
+[node name="ItemSprite" type="Sprite2D" parent="." unique_id=2115828360]
