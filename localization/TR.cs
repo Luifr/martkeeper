@@ -31,3 +31,12 @@ public static class TR
     public static TrKey HELLO_WORLD => TrKey.HELLO_WORLD;
     public static TrKey BANANA => TrKey.BANANA;
 }
+
+public static class Locale
+{
+    public static readonly string EN = "en";
+    public static readonly string PT = "pt";
+    public static readonly string DE = "de";
+
+    public static readonly string[] All = { EN, PT, DE };
+}

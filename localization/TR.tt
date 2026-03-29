@@ -17,7 +17,9 @@ public readonly struct TrKey
     // --- Generated Keys ---
 <#
     string csvPath = Host.ResolvePath("translations.csv"); 
-    var lines = File.Exists(csvPath) ? File.ReadAllLines(csvPath).Skip(1).ToList() : new List<string>();
+    var allLines = File.Exists(csvPath) ? File.ReadAllLines(csvPath).ToList() : new List<string>();
+    var header = allLines.Count > 0 ? allLines[0] : string.Empty;
+    var lines = allLines.Count > 0 ? allLines.Skip(1) : new List<string>(); // Skip header
     
     foreach (var line in lines) {
         if (string.IsNullOrWhiteSpace(line)) continue;
@@ -52,4 +54,17 @@ public static class TR
 #>
     public static TrKey <#= propertyName #> => TrKey.<#= propertyName #>;
 <# } #>
+}
+
+public static class Locale
+{
+<#
+    var locales = header.Split(',').Skip(1);
+    var localesUpper = string.Join(", ", locales.Select(l => l.Trim().ToUpper()));
+    foreach (var locale in locales) {
+#>
+    public static readonly string <#=locale.ToUpper()#> = "<#=locale#>";
+<# } #>
+
+    public static readonly string[] All = { <#=localesUpper#> };
 }
