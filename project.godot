@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Martkeeper"
+config/version="0.0.1"
 run/main_scene="uid://lnqo34g2guc4"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://assets/textures/icon.svg"
