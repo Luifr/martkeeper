@@ -1,4 +1,3 @@
-using System;
 using Godot;
 
 namespace Martkeeper;
@@ -19,6 +18,7 @@ public partial class Person : RigidBody2D
 
 	[Export] public float headRadius = 40;
 	[Export] public float shoulderRadiusRatio = 0.35f;
+	[Export] public float turnSpeedMultiplier = 0.5f;
 
 	public override void _Ready()
 	{
@@ -53,7 +53,14 @@ public partial class Person : RigidBody2D
 	{
 		Vector2 targetVelocity = MoveInput * Speed;
 
+
 		LinearVelocity = LinearVelocity.Lerp(targetVelocity, 0.1f);
+		if (MoveInput.Length() > 0)
+		{
+			Rotate(
+				GetAngleTo(GlobalPosition + MoveInput) * turnSpeedMultiplier
+			);
+		}
 	}
 
 	public override void _Draw()
