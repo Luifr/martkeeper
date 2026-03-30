@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cncs2ew01drtw"]
+
+[ext_resource type="Script" uid="uid://dyef7p6k706ox" path="res://scenes/entities/structures/stock/Stock.cs" id="1_ntpgg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kb4ls"]
+size = Vector2(92, 184)
+
+[sub_resource type="Gradient" id="Gradient_munli"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l70l6"]
+gradient = SubResource("Gradient_munli")
+
+[node name="Stock" type="StaticBody2D" unique_id=1405568511]
+collision_mask = 0
+script = ExtResource("1_ntpgg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1990367681]
+shape = SubResource("RectangleShape2D_kb4ls")
+
+[node name="BackgroundSprite" type="Sprite2D" parent="." unique_id=410791398]
+scale = Vector2(0.359375, 184)
+texture = SubResource("GradientTexture1D_l70l6")
+
+[node name="ProductSprite" type="Sprite2D" parent="." unique_id=457644810]
+unique_name_in_owner = true

@@ -11,6 +11,7 @@ public partial class Person : RigidBody2D
 
 	public Hand leftHand;
 	public Hand rightHand;
+	public RayCast2D RayCast;
 
 	private CollisionShape2D HeadShape;
 	private CollisionShape2D LeftShoulderShape;
@@ -18,10 +19,11 @@ public partial class Person : RigidBody2D
 
 	[Export] public float headRadius = 40;
 	[Export] public float shoulderRadiusRatio = 0.35f;
-	[Export] public float turnSpeedMultiplier = 0.5f;
+	[Export] public float turnSpeedMultiplier = 0.1f;
 
 	public override void _Ready()
 	{
+		RayCast = GetNode<RayCast2D>("RayCast2D");
 		leftHand = GetNode<Hand>("%LeftHand");
 		rightHand = GetNode<Hand>("%RightHand");
 
@@ -54,7 +56,14 @@ public partial class Person : RigidBody2D
 		Vector2 targetVelocity = MoveInput * Speed;
 
 
+		// Setting velocity will handle movement
 		LinearVelocity = LinearVelocity.Lerp(targetVelocity, 0.1f);
+
+		LookAtWalkingDirection();
+	}
+
+	private void LookAtWalkingDirection()
+	{
 		if (MoveInput.Length() > 0)
 		{
 			Rotate(

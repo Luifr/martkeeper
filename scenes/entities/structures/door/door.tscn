@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b6jp3i3cfb5nm"]
 
-[ext_resource type="Script" uid="uid://nwnbuxgebap0" path="res://scenes/entities/door/Door.cs" id="1_npj28"]
+[ext_resource type="Script" uid="uid://nwnbuxgebap0" path="res://scenes/entities/structures/door/Door.cs" id="1_npj28"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6q06x"]
-size = Vector2(26, 171)
+size = Vector2(20, 136)
 
 [sub_resource type="Gradient" id="Gradient_k2fmo"]
 offsets = PackedFloat32Array(0)
@@ -13,6 +13,7 @@ colors = PackedColorArray(0, 0, 0, 1)
 gradient = SubResource("Gradient_k2fmo")
 
 [node name="Door" type="RigidBody2D" unique_id=1754858698]
+collision_mask = 7
 mass = 0.2
 linear_damp = 0.5
 angular_damp = 0.1
@@ -22,11 +23,11 @@ script = ExtResource("1_npj28")
 shape = SubResource("RectangleShape2D_6q06x")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1186068999]
-scale = Vector2(0.1015625, 174.00003)
+scale = Vector2(0.07812499, 138)
 texture = SubResource("GradientTexture1D_l3cfh")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=1218178293]
-position = Vector2(0, -87)
+position = Vector2(0, -69)
 scale = Vector2(0.32, 0.48000002)
 node_b = NodePath("..")
 softness = 0.5

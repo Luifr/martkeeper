@@ -11,6 +11,7 @@ colors = PackedColorArray(0.44313726, 0.44313726, 0.44313726, 1)
 gradient = SubResource("Gradient_1jpvx")
 
 [node name="Wall" type="StaticBody2D" unique_id=1638114969]
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=581903182]
 shape = SubResource("RectangleShape2D_5cg6r")

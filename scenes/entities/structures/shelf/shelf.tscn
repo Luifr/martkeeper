@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dk1jvmrdlyrnk"]
+
+[ext_resource type="Script" uid="uid://bv4i4flv0n2r3" path="res://scenes/entities/structures/shelf/Shelf.cs" id="1_wu2b2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kb4ls"]
+size = Vector2(92, 184)
+
+[sub_resource type="Gradient" id="Gradient_munli"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l70l6"]
+gradient = SubResource("Gradient_munli")
+
+[node name="Shelf" type="StaticBody2D" unique_id=1405568511]
+collision_mask = 0
+script = ExtResource("1_wu2b2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1990367681]
+shape = SubResource("RectangleShape2D_kb4ls")
+
+[node name="BackgroundSprite" type="Sprite2D" parent="." unique_id=410791398]
+scale = Vector2(0.359375, 184)
+texture = SubResource("GradientTexture1D_l70l6")
+
+[node name="ProductSprite" type="Sprite2D" parent="." unique_id=457644810]
+unique_name_in_owner = true
+
+[node name="ProductCount" type="Label" parent="." unique_id=824394872]
+unique_name_in_owner = true
+offset_left = 16.0
+offset_top = -11.5
+offset_right = 17.0
+offset_bottom = 11.5
