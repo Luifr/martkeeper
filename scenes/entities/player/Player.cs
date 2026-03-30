@@ -19,7 +19,7 @@ public partial class Player : Node2D
 
 	public override void _Process(double delta)
 	{
-		_person.MoveInput = Input.GetVector("left", "right", "up", "down");
+		_person.MoveInput = Input.GetVector(InputAction.LEFT, InputAction.RIGHT, InputAction.UP, InputAction.DOWN);
 	}
 
 	private void TryInteract()
@@ -80,7 +80,7 @@ public partial class Player : Node2D
 
 	public override void _Input(InputEvent @event)
 	{
-		if (@event.IsActionPressed("interact"))
+		if (@event.IsActionPressed(InputAction.INTERACT))
 		{
 			TryInteract();
 		}

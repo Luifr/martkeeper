@@ -23,7 +23,7 @@ public partial class Main : Node
 		if (language == "automatic")
 		{
 			string preferedLanguage = OS.GetLocaleLanguage();
-   		TranslationServer.SetLocale(preferedLanguage);
+			TranslationServer.SetLocale(preferedLanguage);
 		}
 		else
 		{
