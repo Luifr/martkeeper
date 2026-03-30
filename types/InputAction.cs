@@ -10,5 +10,5 @@ public static class InputAction
     public static readonly string UP = "up";
     public static readonly string DOWN = "down";
     public static readonly string INTERACT = "interact";
+    public static readonly string[] All = { LEFT, RIGHT, UP, DOWN, INTERACT };
 }
-

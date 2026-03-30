@@ -17,6 +17,8 @@ public static class InputAction
   var allLines = File.Exists(projectSettingsPath) ? File.ReadAllLines(projectSettingsPath).ToList() : new List<string>();
   var inputSectionLines = new List<string>();
 
+  var actions = new List<string>();
+
   bool isInInputSection = false;
 
   allLines.ForEach(line => {
@@ -34,6 +36,7 @@ public static class InputAction
 
     if (Regex.IsMatch(line, "[a-zA-Z]+=")) {
       var action = line.Split('=')[0].Trim();
+      actions.Add(action.ToUpper());
 #>
     public static readonly string <#= action.ToUpper() #> = "<#= action #>";
 <#
@@ -41,5 +44,5 @@ public static class InputAction
     }
   });
 #>
+    public static readonly string[] All = { <#= string.Join(", ", actions)#> };
 }
-
