@@ -7,7 +7,7 @@ public partial class Person : RigidBody2D
 
 	// Use to guide the person which acts like a vehicle
 	public Vector2 MoveInput;
-	[Export] public float Speed = 400f;
+	[Export] public float Speed = 600f;
 
 	public Hand leftHand;
 	public Hand rightHand;

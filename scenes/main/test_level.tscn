@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bunx2368ro35c"]
+
+[ext_resource type="PackedScene" uid="uid://b4gp5h7ew4xq6" path="res://scenes/entities/player/player.tscn" id="1_6oyos"]
+[ext_resource type="PackedScene" uid="uid://b0hspc1j6re65" path="res://scenes/entities/wall/wall.tscn" id="2_5fulm"]
+[ext_resource type="PackedScene" uid="uid://b6jp3i3cfb5nm" path="res://scenes/entities/door/door.tscn" id="3_qir24"]
+
+[node name="TestLevel" type="Node" unique_id=189136369]
+
+[node name="Player" parent="." unique_id=1857102111 instance=ExtResource("1_6oyos")]
+position = Vector2(469, 324)
+
+[node name="Node" type="Node" parent="." unique_id=1845359706]
+
+[node name="WallLeft" parent="Node" unique_id=1638114969 instance=ExtResource("2_5fulm")]
+position = Vector2(20, 323)
+scale = Vector2(1, 2.1599963)
+
+[node name="WallRight" parent="Node" unique_id=1347141059 instance=ExtResource("2_5fulm")]
+position = Vector2(1112, 323)
+scale = Vector2(1, 2.1599963)
+
+[node name="WallUp" parent="Node" unique_id=1470592729 instance=ExtResource("2_5fulm")]
+position = Vector2(568, 18)
+rotation = 1.5707964
+scale = Vector2(1, 3.5999975)
+
+[node name="WallDown" parent="Node" unique_id=2116195752 instance=ExtResource("2_5fulm")]
+position = Vector2(564, 628)
+rotation = 1.5707964
+scale = Vector2(1, 3.651855)
+
+[node name="WallMiddleUp" parent="Node" unique_id=1524503806 instance=ExtResource("2_5fulm")]
+position = Vector2(689, 88.99999)
+scale = Vector2(0.68, 0.37735984)
+
+[node name="WallMiddleDown" parent="Node" unique_id=1623501794 instance=ExtResource("2_5fulm")]
+position = Vector2(689, 558.00006)
+scale = Vector2(0.68315625, 0.42742532)
+
+[node name="Door" parent="." unique_id=1754858698 node_paths=PackedStringArray("ConnectedBody") instance=ExtResource("3_qir24")]
+position = Vector2(689, 232)
+ConnectedBody = NodePath("../Node/WallMiddleUp")
+
+[node name="Door2" parent="." unique_id=215895680 node_paths=PackedStringArray("ConnectedBody") instance=ExtResource("3_qir24")]
+position = Vector2(689.0001, 407)
+rotation = -3.1410522
+ConnectedBody = NodePath("../Node/WallMiddleDown")
