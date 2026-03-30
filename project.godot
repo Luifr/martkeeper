@@ -16,6 +16,12 @@ run/main_scene="uid://lnqo34g2guc4"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://assets/textures/icon.svg"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+window/stretch/scale_mode="integer"
+
 [dotnet]
 
 project/assembly_name="Martkeeper"
@@ -71,4 +77,5 @@ locale/translations=PackedStringArray("res://localization/translations.en.transl
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"

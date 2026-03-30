@@ -15,7 +15,7 @@ position = Vector2(469, 324)
 [node name="Buildings" type="Node" parent="." unique_id=1096064677]
 
 [node name="Stock" parent="Buildings" unique_id=2133369044 instance=ExtResource("6_1f7lt")]
-position = Vector2(919, 328)
+position = Vector2(960, 310)
 product = ExtResource("5_1f7lt")
 
 [node name="Shelf" parent="Buildings" unique_id=1405568511 instance=ExtResource("4_qir24")]
@@ -31,25 +31,35 @@ position = Vector2(688.00006, 376.00006)
 rotation = -3.1410522
 ConnectedBody = NodePath("../../Walls/WallMiddleDown")
 
+[node name="DoorEntrance" parent="Buildings" unique_id=1105747233 node_paths=PackedStringArray("ConnectedBody") instance=ExtResource("3_qir24")]
+position = Vector2(537, 629)
+rotation = 1.5707964
+ConnectedBody = NodePath("../../Walls/WallDownRight")
+
 [node name="Walls" type="Node" parent="." unique_id=1845359706]
 
 [node name="WallLeft" parent="Walls" unique_id=1638114969 instance=ExtResource("2_5fulm")]
-position = Vector2(20, 323)
+position = Vector2(18, 323)
 scale = Vector2(1, 2.1599963)
 
 [node name="WallRight" parent="Walls" unique_id=1347141059 instance=ExtResource("2_5fulm")]
-position = Vector2(1112, 323)
+position = Vector2(1133, 324)
 scale = Vector2(1, 2.1599963)
 
 [node name="WallUp" parent="Walls" unique_id=1470592729 instance=ExtResource("2_5fulm")]
 position = Vector2(568, 18)
 rotation = 1.5707964
-scale = Vector2(1, 3.5999975)
+scale = Vector2(1, 3.6799974)
 
-[node name="WallDown" parent="Walls" unique_id=2116195752 instance=ExtResource("2_5fulm")]
-position = Vector2(564, 628)
+[node name="WallDownLeft" parent="Walls" unique_id=2116195752 instance=ExtResource("2_5fulm")]
+position = Vector2(249.99998, 629)
 rotation = 1.5707964
-scale = Vector2(1, 3.651855)
+scale = Vector2(1, 1.4518577)
+
+[node name="WallDownRight" parent="Walls" unique_id=1452821042 instance=ExtResource("2_5fulm")]
+position = Vector2(860, 629)
+rotation = 1.5707964
+scale = Vector2(1, 1.6918596)
 
 [node name="WallMiddleUp" parent="Walls" unique_id=1524503806 instance=ExtResource("2_5fulm")]
 position = Vector2(688, 93)
@@ -58,3 +68,6 @@ scale = Vector2(0.68, 0.49736235)
 [node name="WallMiddleDown" parent="Walls" unique_id=1623501794 instance=ExtResource("2_5fulm")]
 position = Vector2(688, 527)
 scale = Vector2(0.6831563, 0.5474157)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=937377330]
+position = Vector2(575, 323)
