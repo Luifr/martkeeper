@@ -1,0 +1,14 @@
+[gd_resource type="Theme" format=3 uid="uid://x0vo5yoi3gk2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpbsb"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.4113405, 0.6047325, 0.89871764, 1)
+
+[resource]
+Button/font_sizes/font_size = 32
+Label/font_sizes/font_size = 32
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_tpbsb")
+VBoxContainer/constants/separation = 4

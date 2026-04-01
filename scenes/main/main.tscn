@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://lnqo34g2guc4"]
 
 [ext_resource type="Script" uid="uid://di3nqxmb2dgbx" path="res://scenes/main/Main.cs" id="1_u1xfj"]
-[ext_resource type="PackedScene" uid="uid://bunx2368ro35c" path="res://scenes/main/test_level.tscn" id="2_iuonh"]
+[ext_resource type="Script" uid="uid://cb5hljepic8c7" path="res://scenes/main/SceneManager.cs" id="2_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://ua5q1io8pn3c" path="res://scenes/main/main_menu/main_menu.tscn" id="3_k2fmo"]
 
 [node name="Main" type="Node" unique_id=40022650]
 script = ExtResource("1_u1xfj")
 
-[node name="TestLevel" parent="." unique_id=189136369 instance=ExtResource("2_iuonh")]
+[node name="SceneManager" type="Node" parent="." unique_id=217953294 groups=["SceneManager"]]
+script = ExtResource("2_k2fmo")
+
+[node name="SceneContainer" type="Node" parent="SceneManager" unique_id=2076956797]
+
+[node name="MainMenu" parent="SceneManager/SceneContainer" unique_id=1099749950 instance=ExtResource("3_k2fmo")]

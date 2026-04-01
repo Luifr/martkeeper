@@ -5,38 +5,40 @@ namespace MartKeeper;
 
 public readonly struct TrKey
 {
-    private readonly string _value;
-    private TrKey(string value) => _value = value;
+  private readonly string _value;
 
-    // --- Generated Keys ---
-    public static readonly TrKey HELLO_WORLD = new TrKey("HELLO_WORLD");
-    public static readonly TrKey BANANA = new TrKey("BANANA");
+  private TrKey(string value) => _value = value;
 
-    // --- Localization Logic ---
+  // --- Generated Keys ---
+  public static readonly TrKey HELLO_WORLD = new TrKey("HELLO_WORLD");
+  public static readonly TrKey BANANA = new TrKey("BANANA");
 
-    /// <summary>
-    /// Implicit conversion for standard translations: label.Text = TR.HELLO;
-    /// </summary>
-    public static implicit operator string(TrKey key) 
-    {
-        return TranslationServer.Translate(key._value);
-    }
+  // --- Localization Logic ---
 
-    public string GetRaw() => _value;
-    public override string ToString() => (string)this;
+  /// <summary>
+  /// Implicit conversion for standard translations: label.Text = TR.HELLO;
+  /// </summary>
+  public static implicit operator string(TrKey key)
+  {
+    return TranslationServer.Translate(key._value);
+  }
+
+  public string GetRaw() => _value;
+
+  public override string ToString() => (string)this;
 }
 
 public static class TR
 {
-    public static TrKey HELLO_WORLD => TrKey.HELLO_WORLD;
-    public static TrKey BANANA => TrKey.BANANA;
+  public static TrKey HELLO_WORLD => TrKey.HELLO_WORLD;
+  public static TrKey BANANA => TrKey.BANANA;
 }
 
 public static class Locale
 {
-    public static readonly string EN = "en";
-    public static readonly string PT = "pt";
-    public static readonly string DE = "de";
+  public static readonly string EN = "en";
+  public static readonly string PT = "pt";
+  public static readonly string DE = "de";
 
-    public static readonly string[] All = { EN, PT, DE };
+  public static readonly string[] All = { EN, PT, DE };
 }

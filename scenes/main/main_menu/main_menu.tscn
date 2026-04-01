@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://ua5q1io8pn3c"]
+
+[ext_resource type="Script" uid="uid://bk8hp8x6vyffy" path="res://scenes/main/main_menu/MainMenu.cs" id="1_0kd0q"]
+[ext_resource type="Theme" uid="uid://0qt283hbm7ti" path="res://assets/themes/title.tres" id="1_2tvpl"]
+[ext_resource type="PackedScene" uid="uid://bunx2368ro35c" path="res://scenes/main/test_level.tscn" id="2_r7wpq"]
+
+[node name="MainMenu" type="CanvasLayer" unique_id=1099749950]
+script = ExtResource("1_0kd0q")
+GameScene = ExtResource("2_r7wpq")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1952694497]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=284005237]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("1_2tvpl")
+text = "Martkeeper"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=2084869981]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=890424029]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 75)
+layout_mode = 2
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1798031451]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 75)
+layout_mode = 2
+text = "Settings"
+
+[node name="CreditsButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1376165196]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 75)
+layout_mode = 2
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=693644124]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 75)
+layout_mode = 2
+text = "Quit"

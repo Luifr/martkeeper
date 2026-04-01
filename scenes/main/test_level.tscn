@@ -69,5 +69,5 @@ scale = Vector2(0.68, 0.49736235)
 position = Vector2(688, 527)
 scale = Vector2(0.6831563, 0.5474157)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=937377330]
-position = Vector2(575, 323)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1802215947]
+position = Vector2(587, 321)

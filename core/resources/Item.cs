@@ -7,8 +7,11 @@ namespace MartKeeper.Core;
 public partial class Item : Resource
 {
   // Used like an Id, to display use GetName
-  [Export] public string NameKey;
-  [Export] public Texture2D Texture;
+  [Export]
+  public string NameKey;
+
+  [Export]
+  public Texture2D Texture;
 
   public string GetDisplayName() => Tr(NameKey);
 }
