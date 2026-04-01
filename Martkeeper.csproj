@@ -7,5 +7,6 @@
   <Target Name="GenerateTranslations" BeforeTargets="BeforeBuild">
     <Exec Command="dotnet t4 $(ProjectDir)localization/TR.tt" />
     <Exec Command="dotnet t4 $(ProjectDir)/types/InputAction.tt" />
+    <Exec Command="dotnet csharpier format ." />
   </Target>
 </Project>
