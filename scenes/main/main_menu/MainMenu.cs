@@ -29,7 +29,7 @@ public partial class MainMenu : CanvasLayer
   {
     Debug.Assert(GameScene != null, "Set a game scene in main menu");
 
-    _sceneManager.ChangeSceneToPackagedScene(GameScene);
+    _sceneManager.ChangeSceneToPackagedScene(GameScene, TransitionMode.Fade);
   }
 
   private void HandleQuitPressed()
