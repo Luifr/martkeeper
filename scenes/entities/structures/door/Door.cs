@@ -21,6 +21,14 @@ public partial class Door : RigidBody2D
         pinJoint2D.NodeA = pinJoint2D.GetPathTo(ConnectedBody);
       })
       .CallDeferred();
+
+    var block1 = GetNode<StaticBody2D>("%Block1");
+    var block2 = GetNode<StaticBody2D>("%Block2");
+
+    var blocks = new Node();
+    AddChild(blocks);
+    block1.Reparent(blocks);
+    block2.Reparent(blocks);
   }
 
   public override void _Process(double delta)

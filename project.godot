@@ -71,6 +71,7 @@ interact={
 
 [internationalization]
 
+rendering/root_node_auto_translate=false
 locale/translations=PackedStringArray("res://localization/translations.en.translation", "res://localization/translations.pt.translation", "res://localization/translations.de.translation")
 
 [layer_names]
@@ -78,6 +79,7 @@ locale/translations=PackedStringArray("res://localization/translations.en.transl
 2d_physics/layer_1="Building"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Customer"
+2d_physics/layer_9="DoorBlock"
 
 [physics]
 

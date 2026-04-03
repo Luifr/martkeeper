@@ -12,8 +12,10 @@ colors = PackedColorArray(0, 0, 0, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_l3cfh"]
 gradient = SubResource("Gradient_k2fmo")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_wmvrb"]
+
 [node name="Door" type="RigidBody2D" unique_id=1754858698]
-collision_mask = 7
+collision_mask = 263
 mass = 0.2
 linear_damp = 0.5
 angular_damp = 0.1
@@ -30,8 +32,27 @@ texture = SubResource("GradientTexture1D_l3cfh")
 position = Vector2(0, -69)
 scale = Vector2(0.32, 0.48000002)
 node_b = NodePath("..")
-softness = 0.5
+bias = 0.9
+softness = 0.1
 angular_limit_enabled = true
-angular_limit_lower = -0.34906584
-angular_limit_upper = 0.34906584
+angular_limit_lower = -0.034906585
+angular_limit_upper = 0.034906585
 motor_enabled = true
+
+[node name="Block1" type="StaticBody2D" parent="." unique_id=828447000]
+unique_name_in_owner = true
+position = Vector2(-113, -77)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block1" unique_id=65650005]
+shape = SubResource("CircleShape2D_wmvrb")
+
+[node name="Block2" type="StaticBody2D" parent="." unique_id=1715333564]
+unique_name_in_owner = true
+position = Vector2(113, -77)
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block2" unique_id=236584784]
+shape = SubResource("CircleShape2D_wmvrb")
