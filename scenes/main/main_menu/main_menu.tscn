@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ua5q1io8pn3c"]
 
 [ext_resource type="Script" uid="uid://bk8hp8x6vyffy" path="res://scenes/main/main_menu/MainMenu.cs" id="1_0kd0q"]
-[ext_resource type="Theme" uid="uid://0qt283hbm7ti" path="res://assets/themes/title.tres" id="1_2tvpl"]
 [ext_resource type="PackedScene" uid="uid://bunx2368ro35c" path="res://scenes/main/test_level.tscn" id="2_r7wpq"]
+[ext_resource type="PackedScene" uid="uid://jv0rebivhiv7" path="res://scenes/main/settings/SettingsMenu.tscn" id="3_0kd0q"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=1099749950]
 script = ExtResource("1_0kd0q")
@@ -18,7 +18,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="PanelContainer" unique_id=284005237]
 layout_mode = 2
 size_flags_vertical = 0
-theme = ExtResource("1_2tvpl")
+theme_type_variation = &"HeaderLarge"
 text = "Martkeeper"
 horizontal_alignment = 1
 
@@ -51,3 +51,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 text = "Quit"
+
+[node name="SettingsMenu" parent="." unique_id=1896719537 instance=ExtResource("3_0kd0q")]
+unique_name_in_owner = true
+visible = false

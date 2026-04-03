@@ -8,9 +8,15 @@ public partial class MainMenu : CanvasLayer
   [Export]
   public PackedScene GameScene;
 
+  [Export]
+  public PackedScene SettingsScene;
+
   private SceneManager _sceneManager;
   private Button _play;
+  private Button _settings;
   private Button _quit;
+
+  private SettingsMenu _settings_menu;
 
   public override void _Ready()
   {
@@ -18,10 +24,21 @@ public partial class MainMenu : CanvasLayer
     _sceneManager = GetTree().GetFirstNodeInGroup("SceneManager") as SceneManager;
 
     _play = GetNode<Button>("%PlayButton");
+    _settings = GetNode<Button>("%SettingsButton");
+    _settings_menu = GetNode<SettingsMenu>("%SettingsMenu");
     _quit = GetNode<Button>("%QuitButton");
 
     _play.Pressed += HandlePlayPressed;
     _quit.Pressed += HandleQuitPressed;
+
+    _settings.Pressed += () =>
+    {
+      _settings_menu.Visible = true;
+    };
+    _settings_menu.Apply += () =>
+    {
+      _settings_menu.Visible = false;
+    };
   }
 
   private void HandlePlayPressed()

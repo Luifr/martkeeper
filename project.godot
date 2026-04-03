@@ -71,7 +71,6 @@ interact={
 
 [internationalization]
 
-rendering/root_node_auto_translate=false
 locale/translations=PackedStringArray("res://localization/translations.en.translation", "res://localization/translations.pt.translation", "res://localization/translations.de.translation")
 
 [layer_names]

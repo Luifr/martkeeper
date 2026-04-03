@@ -1,5 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://x0vo5yoi3gk2"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tpbsb"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpbsb"]
 content_margin_left = 15.0
 content_margin_top = 15.0
@@ -9,6 +11,15 @@ bg_color = Color(0.4113405, 0.6047325, 0.89871764, 1)
 
 [resource]
 Button/font_sizes/font_size = 32
-Label/font_sizes/font_size = 32
+CheckButton/colors/font_color = Color(1, 1, 1, 1)
+CheckButton/font_sizes/font_size = 16
+CheckButton/styles/normal = SubResource("StyleBoxEmpty_tpbsb")
+HeaderLarge/base_type = &"Label"
+HeaderLarge/font_sizes/font_size = 48
+HeaderMedium/base_type = &"Label"
+HeaderMedium/font_sizes/font_size = 32
+HeaderSmall/font_sizes/font_size = 24
+Label/font_sizes/font_size = 16
+OptionButton/font_sizes/font_size = 12
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_tpbsb")
 VBoxContainer/constants/separation = 4
