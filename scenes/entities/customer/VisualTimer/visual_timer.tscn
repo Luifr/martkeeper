@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dpag2w0hn18rp"]
+
+[ext_resource type="Script" uid="uid://87v1i2qdyeb4" path="res://scenes/entities/customer/VisualTimer/VisualTimer.cs" id="1_ltx6g"]
+
+[node name="VisualTimer" type="Node2D" unique_id=611926337]
+script = ExtResource("1_ltx6g")
