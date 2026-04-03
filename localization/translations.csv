@@ -1,6 +1,8 @@
 keys,en,pt,de
 HELLO_WORLD,Hello World!,Ola mundo!,Hallo Welt!
-BANANA,banana,banana,Banana
+BANANA,banana,banana,Banane
+BREAD,bread,pão,Brot
+ORANGE_JUICE,orange juice,suco de laranja,Orangesaft
 VIDEO_TITLE,Video,Video,Video
 RESOLUTION_TITLE,Resolution,Resolução,Resolution
 FULLSCREEN_TITLE,Fullscreen,Tela Cheia,Vollbild

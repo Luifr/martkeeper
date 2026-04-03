@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Product" format=3 uid="uid://clsmvosofxubm"]
+
+[ext_resource type="Texture2D" uid="uid://lnfkxyc624bf" path="res://assets/textures/bread.png" id="1_3hqve"]
+[ext_resource type="Script" uid="uid://b2quclcvqxsu1" path="res://core/resources/Product.cs" id="1_q60vb"]
+
+[resource]
+script = ExtResource("1_q60vb")
+NameKey = "BREAD"
+Texture = ExtResource("1_3hqve")
+metadata/_custom_type_script = "uid://b2quclcvqxsu1"
