@@ -12,7 +12,7 @@ colors = PackedColorArray(0, 0, 0, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_l70l6"]
 gradient = SubResource("Gradient_munli")
 
-[node name="Shelf" type="StaticBody2D" unique_id=1405568511]
+[node name="Shelf" type="StaticBody2D" unique_id=1405568511 groups=["NavigationBlock"]]
 collision_mask = 0
 script = ExtResource("1_wu2b2")
 

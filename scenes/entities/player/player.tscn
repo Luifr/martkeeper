@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://corl3hqdv8hc6" path="res://scenes/entities/player/Player.cs" id="1_635qg"]
 [ext_resource type="PackedScene" uid="uid://ul0nqkirfhyb" path="res://scenes/entities/person/person.tscn" id="2_58kc7"]
 
-[node name="Player" type="Node2D" unique_id=1857102111]
+[node name="Player" unique_id=1602392041 instance=ExtResource("2_58kc7")]
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_635qg")
-
-[node name="Person" parent="." unique_id=1760733348 instance=ExtResource("2_58kc7")]

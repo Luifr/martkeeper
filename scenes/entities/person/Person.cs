@@ -4,9 +4,6 @@ namespace MartKeeper.Entities;
 
 public partial class Person : RigidBody2D
 {
-  // Use to guide the person which acts like a vehicle
-  public Vector2 MoveInput;
-
   [Export]
   public float Speed = 600f;
 
@@ -26,6 +23,12 @@ public partial class Person : RigidBody2D
 
   [Export]
   public float turnSpeedMultiplier = 0.1f;
+
+  [Export]
+  Color headColor = Color.Color8(0, 0, 0);
+
+  [Export]
+  Color shirtColor = Color.Color8(0, 255, 0);
 
   public override void _Ready()
   {
@@ -53,31 +56,13 @@ public partial class Person : RigidBody2D
     }
   }
 
-  public override void _Process(double delta) { }
-
-  public override void _IntegrateForces(PhysicsDirectBodyState2D state)
+  protected void LookAtWalkingDirection(Vector2 direction)
   {
-    Vector2 targetVelocity = MoveInput * Speed;
-
-    // Setting velocity will handle movement
-    LinearVelocity = LinearVelocity.Lerp(targetVelocity, 0.1f);
-
-    LookAtWalkingDirection();
-  }
-
-  private void LookAtWalkingDirection()
-  {
-    if (MoveInput.Length() > 0)
-    {
-      Rotate(GetAngleTo(GlobalPosition + MoveInput) * turnSpeedMultiplier);
-    }
+    Rotate(GetAngleTo(GlobalPosition + direction) * turnSpeedMultiplier);
   }
 
   public override void _Draw()
   {
-    var headColor = Color.Color8(0, 0, 0);
-    var shirtColor = Color.Color8(0, 255, 0);
-
     // Shoulder
     DrawCircle(new Vector2(0, 35), headRadius * shoulderRadiusRatio, shirtColor);
     DrawCircle(new Vector2(0, -35), headRadius * shoulderRadiusRatio, shirtColor);

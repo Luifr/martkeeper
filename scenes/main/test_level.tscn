@@ -6,6 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://dk1jvmrdlyrnk" path="res://scenes/entities/structures/shelf/shelf.tscn" id="4_qir24"]
 [ext_resource type="Resource" uid="uid://cy7rp7utpn5lg" path="res://data/products/banana.tres" id="5_1f7lt"]
 [ext_resource type="PackedScene" uid="uid://cncs2ew01drtw" path="res://scenes/entities/structures/stock/stock.tscn" id="6_1f7lt"]
+[ext_resource type="PackedScene" uid="uid://bnyn3t8fsgnaj" path="res://scenes/entities/customer/customer.tscn" id="7_xv33n"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_xv33n"]
+vertices = PackedVector2Array(710.97656, 434.89063, 665.02344, 434.89063, 263, 432, 263, 228, 665.0781, 177.60156, 710.9219, 177.60156, 904, 208, 904, 412, 1104, 47, 1104, 600, 1016, 412, 1016, 208, 710.9219, 47, 710.97656, 600, 592.7422, 785.35156, 468.42188, 789.6328, 473.7578, 658, 477.78125, 658, 588.72656, 629.6719, 477.78125, 600, 596.21875, 600, 596.21875, 629.89844, 665.02344, 600, 47, 600, 151, 432, 47, 47, 151, 228, 665.0781, 47)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 8, 11, 6, 5), PackedInt32Array(7, 10, 9, 13, 0), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(18, 14, 17, 19), PackedInt32Array(20, 21, 18, 19, 2), PackedInt32Array(1, 22, 20, 2), PackedInt32Array(2, 19, 23, 24), PackedInt32Array(24, 23, 25, 26), PackedInt32Array(3, 26, 25, 27, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(4, 3, 1147, 3, 1152, 658, 599, 640, 603, 795, 458, 800, 464, 652, 0, 648)])
+parsed_geometry_type = 1
+source_geometry_mode = 1
+source_geometry_group_name = &"NavigationBlock"
 
 [node name="TestLevel" type="Node" unique_id=189136369]
 
@@ -19,7 +28,7 @@ position = Vector2(960, 310)
 product = ExtResource("5_1f7lt")
 
 [node name="Shelf" parent="Buildings" unique_id=1405568511 instance=ExtResource("4_qir24")]
-position = Vector2(173, 338)
+position = Vector2(207, 330)
 product = ExtResource("5_1f7lt")
 
 [node name="Door" parent="Buildings" unique_id=1754858698 node_paths=PackedStringArray("ConnectedBody") instance=ExtResource("3_qir24")]
@@ -71,3 +80,9 @@ scale = Vector2(0.6831563, 0.5474157)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1802215947]
 position = Vector2(587, 321)
+
+[node name="Customer" parent="." unique_id=275375801 instance=ExtResource("7_xv33n")]
+position = Vector2(172, 533)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=92387988]
+navigation_polygon = SubResource("NavigationPolygon_xv33n")

@@ -2,21 +2,20 @@ using Godot;
 
 namespace MartKeeper.Entities;
 
-public partial class Player : Node2D
+public partial class Player : Person
 {
-  private Person _person;
+  private Vector2 _moveInput;
 
   public override void _Ready()
   {
-    _person = GetNode<Person>("Person");
-
-    _person.CollisionLayer = 2;
-    _person.CollisionMask = 7;
+    base._Ready();
   }
 
   public override void _Process(double delta)
   {
-    _person.MoveInput = Input.GetVector(
+    base._Process(delta);
+
+    _moveInput = Input.GetVector(
       InputAction.LEFT,
       InputAction.RIGHT,
       InputAction.UP,
@@ -24,10 +23,20 @@ public partial class Player : Node2D
     );
   }
 
+  public override void _IntegrateForces(PhysicsDirectBodyState2D state)
+  {
+    Vector2 targetVelocity = _moveInput * Speed;
+
+    // Setting velocity will handle movement
+    LinearVelocity = LinearVelocity.Lerp(targetVelocity, 0.1f);
+
+    LookAtWalkingDirection(_moveInput);
+  }
+
   private void TryInteract()
   {
     GD.Print("TryInteract: Lets try to interact");
-    if (!_person.RayCast.IsColliding())
+    if (!RayCast.IsColliding())
     {
       GD.Print("TryInteract: No hit");
       // Nothing to interact with
@@ -36,7 +45,7 @@ public partial class Player : Node2D
 
     GD.Print("TryInteract: Hit");
 
-    var gameObject = _person.RayCast.GetCollider();
+    var gameObject = RayCast.GetCollider();
 
     if (gameObject is Shelf shelf)
     {
@@ -56,13 +65,13 @@ public partial class Player : Node2D
 
   private void TryInteractShelf(Shelf shelf)
   {
-    if (_person.leftHand.CurrentItem?.NameKey == shelf.product.NameKey)
+    if (leftHand.CurrentItem?.NameKey == shelf.product.NameKey)
     {
-      PutItemFromHandToShelf(shelf, _person.leftHand);
+      PutItemFromHandToShelf(shelf, leftHand);
     }
-    if (_person.rightHand.CurrentItem?.NameKey == shelf.product.NameKey)
+    if (rightHand.CurrentItem?.NameKey == shelf.product.NameKey)
     {
-      PutItemFromHandToShelf(shelf, _person.rightHand);
+      PutItemFromHandToShelf(shelf, rightHand);
     }
   }
 
@@ -72,7 +81,7 @@ public partial class Player : Node2D
     if (stock.product == null)
       return;
 
-    _person.rightHand.CurrentItem = stock.product;
+    rightHand.CurrentItem = stock.product;
   }
 
   private void PutItemFromHandToShelf(Shelf shelf, Hand hand)

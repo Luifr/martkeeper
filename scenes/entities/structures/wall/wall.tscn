@@ -10,7 +10,7 @@ colors = PackedColorArray(0.44313726, 0.44313726, 0.44313726, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_diqc5"]
 gradient = SubResource("Gradient_1jpvx")
 
-[node name="Wall" type="StaticBody2D" unique_id=1638114969]
+[node name="Wall" type="StaticBody2D" unique_id=1638114969 groups=["NavigationBlock"]]
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=581903182]

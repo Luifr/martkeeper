@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bnyn3t8fsgnaj"]
+
+[ext_resource type="Script" uid="uid://blou021ab7hi1" path="res://scenes/entities/customer/Customer.cs" id="1_8r5tc"]
+[ext_resource type="PackedScene" uid="uid://ul0nqkirfhyb" path="res://scenes/entities/person/person.tscn" id="2_dojde"]
+
+[node name="Customer" unique_id=1602392041 instance=ExtResource("2_dojde")]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_8r5tc")
+shirtColor = Color(1, 0, 0, 1)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="4" unique_id=472040447]
+path_postprocessing = 1
+debug_enabled = true
