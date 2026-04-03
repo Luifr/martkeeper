@@ -6,6 +6,7 @@ namespace MartKeeper.Types;
 public readonly struct TrKey
 {
   private readonly string _value;
+
   private TrKey(string value) => _value = value;
 
   // --- Generated Keys ---
@@ -24,12 +25,13 @@ public readonly struct TrKey
   /// <summary>
   /// Implicit conversion for standard translations: label.Text = TR.HELLO;
   /// </summary>
-  public static implicit operator string(TrKey key) 
+  public static implicit operator string(TrKey key)
   {
     return TranslationServer.Translate(key._value);
   }
 
   public string GetRaw() => _value;
+
   public override string ToString() => (string)this;
 }
 
