@@ -1,3 +1,9 @@
 keys,en,pt,de
 HELLO_WORLD,Hello World!,Ola mundo!,Hallo Welt!
 BANANA,banana,banana,Banana
+VIDEO_TITLE,Video,Video,Video
+RESOLUTION_TITLE,Resolution,Resolução,Resolution
+FULLSCREEN_TITLE,Fullscreen,Tela Cheia,Vollbild
+AUDIO_TITLE,Audio,Audio,Audio
+MAIN_VOLUME_TITLE,Main Volume,Volume Principal,Hauptvolumen
+MUSIC_VOLUME_TITLE,Music Volume,Volume da Música,Musiklautstärke

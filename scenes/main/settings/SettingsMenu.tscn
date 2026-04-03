@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://jv0rebivhiv7"]
+
+[ext_resource type="Script" uid="uid://dgnivi3akesrh" path="res://scenes/main/settings/SettingsMenu.cs" id="1_mrdmn"]
+
+[node name="SettingsMenu" type="Control" unique_id=1103460238]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mrdmn")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=494038390]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1958057959]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1972446793]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=125794853]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1138371309]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/VBoxContainer" unique_id=1648978062]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "VIDEO_TITLE"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/VBoxContainer" unique_id=1942178299]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/VBoxContainer" unique_id=858432933]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=994622619]
+layout_mode = 2
+text = "RESOLUTION_TITLE"
+
+[node name="OptionButton" type="OptionButton" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1611616022]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+selected = 0
+item_count = 1
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+
+[node name="CheckButton" type="CheckButton" parent="PanelContainer/VBoxContainer/VBoxContainer" unique_id=418272974]
+layout_mode = 2
+text = "FULLSCREEN_TITLE"
+
+[node name="CheckButton2" type="CheckButton" parent="PanelContainer/VBoxContainer/VBoxContainer" unique_id=1639364263]
+layout_mode = 2
+text = "VSYNC"
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=1447320728]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1103106433]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/VBoxContainer2" unique_id=1579767679]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "AUDIO_TITLE"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/VBoxContainer2" unique_id=1402514663]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/VBoxContainer2" unique_id=143074098]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/VBoxContainer2/HBoxContainer" unique_id=813578492]
+layout_mode = 2
+text = "MAIN_VOLUME_TITLE"
+
+[node name="HSlider" type="HSlider" parent="PanelContainer/VBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1662823415]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/VBoxContainer2" unique_id=16415215]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/VBoxContainer2/HBoxContainer2" unique_id=245399140]
+layout_mode = 2
+text = "MUSIC_VOLUME_TITLE"
+
+[node name="HSlider" type="HSlider" parent="PanelContainer/VBoxContainer/VBoxContainer2/HBoxContainer2" unique_id=1617180211]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="AcceptButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=760531791]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+text = "Ok"
