@@ -15,7 +15,7 @@ public partial class Person : RigidBody2D
   private CollisionShape2D RightShoulderShape;
 
   [Export]
-  public float HeadRadius = 40;
+  public float HeadRadius = 30;
 
   [Export]
   public float ShoulderRadiusRatio = 0.35f;
@@ -62,8 +62,8 @@ public partial class Person : RigidBody2D
   public override void _Draw()
   {
     // Shoulder
-    DrawCircle(new Vector2(0, 35), HeadRadius * ShoulderRadiusRatio, ShirtColor);
-    DrawCircle(new Vector2(0, -35), HeadRadius * ShoulderRadiusRatio, ShirtColor);
+    DrawCircle(LeftShoulderShape.Position, HeadRadius * ShoulderRadiusRatio, ShirtColor);
+    DrawCircle(RightShoulderShape.Position, HeadRadius * ShoulderRadiusRatio, ShirtColor);
 
     // Nose
     DrawCircle(

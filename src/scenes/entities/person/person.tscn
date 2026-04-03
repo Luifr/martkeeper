@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://ul0nqkirfhyb"]
 
-[ext_resource type="Script" uid="uid://bwaybma0jj0tp" path="res://scenes/entities/person/Person.cs" id="1_v8cm0"]
-[ext_resource type="PackedScene" uid="uid://ncvdm74ad34d" path="res://scenes/entities/person/hand/hand.tscn" id="2_o3o0c"]
+[ext_resource type="Script" uid="uid://bwaybma0jj0tp" path="res://src/scenes/entities/person/Person.cs" id="1_v8cm0"]
+[ext_resource type="PackedScene" uid="uid://ncvdm74ad34d" path="res://src/scenes/entities/person/hand/hand.tscn" id="2_o3o0c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y1cjr"]
-radius = 40.0
+radius = 30.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sei54"]
-radius = 14.0
+radius = 10.5
 
 [node name="Person" type="RigidBody2D" unique_id=1602392041]
 collision_layer = 0
@@ -21,7 +21,7 @@ script = ExtResource("1_v8cm0")
 shape = SubResource("CircleShape2D_y1cjr")
 
 [node name="LeftShoulderShape" type="CollisionShape2D" parent="." unique_id=1309957009]
-position = Vector2(0, -35)
+position = Vector2(0, -28)
 shape = SubResource("CircleShape2D_sei54")
 
 [node name="LeftHand" parent="LeftShoulderShape" unique_id=1435433288 instance=ExtResource("2_o3o0c")]
@@ -29,7 +29,7 @@ unique_name_in_owner = true
 position = Vector2(15, 0)
 
 [node name="RightShoulderShape" type="CollisionShape2D" parent="." unique_id=584100301]
-position = Vector2(0, 35)
+position = Vector2(0, 28)
 shape = SubResource("CircleShape2D_sei54")
 
 [node name="RightHand" parent="RightShoulderShape" unique_id=520462932 instance=ExtResource("2_o3o0c")]
