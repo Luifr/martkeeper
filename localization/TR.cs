@@ -12,6 +12,12 @@ public readonly struct TrKey
   // --- Generated Keys ---
   public static readonly TrKey HELLO_WORLD = new TrKey("HELLO_WORLD");
   public static readonly TrKey BANANA = new TrKey("BANANA");
+  public static readonly TrKey VIDEO_TITLE = new TrKey("VIDEO_TITLE");
+  public static readonly TrKey RESOLUTION_TITLE = new TrKey("RESOLUTION_TITLE");
+  public static readonly TrKey FULLSCREEN_TITLE = new TrKey("FULLSCREEN_TITLE");
+  public static readonly TrKey AUDIO_TITLE = new TrKey("AUDIO_TITLE");
+  public static readonly TrKey MAIN_VOLUME_TITLE = new TrKey("MAIN_VOLUME_TITLE");
+  public static readonly TrKey MUSIC_VOLUME_TITLE = new TrKey("MUSIC_VOLUME_TITLE");
 
   // --- Localization Logic ---
 
@@ -32,6 +38,12 @@ public static class TR
 {
   public static TrKey HELLO_WORLD => TrKey.HELLO_WORLD;
   public static TrKey BANANA => TrKey.BANANA;
+  public static TrKey VIDEO_TITLE => TrKey.VIDEO_TITLE;
+  public static TrKey RESOLUTION_TITLE => TrKey.RESOLUTION_TITLE;
+  public static TrKey FULLSCREEN_TITLE => TrKey.FULLSCREEN_TITLE;
+  public static TrKey AUDIO_TITLE => TrKey.AUDIO_TITLE;
+  public static TrKey MAIN_VOLUME_TITLE => TrKey.MAIN_VOLUME_TITLE;
+  public static TrKey MUSIC_VOLUME_TITLE => TrKey.MUSIC_VOLUME_TITLE;
 }
 
 public static class Locale
