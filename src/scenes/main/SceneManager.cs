@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Godot;
 
-namespace MartKeeper;
+namespace Martkeeper;
 
 public enum TransitionMode
 {

@@ -1,7 +1,7 @@
 using Godot;
-using MartKeeper.Types;
+using Martkeeper.Types;
 
-namespace MartKeeper.Entities;
+namespace Martkeeper.Entities;
 
 public partial class Player : Person
 {

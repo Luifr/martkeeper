@@ -1,7 +1,6 @@
 using Godot;
-using MartKeeper.Types;
 
-namespace MartKeeper;
+namespace Martkeeper;
 
 public partial class Main : Node
 {

@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using Godot;
 
-namespace MartKeeper;
+namespace Martkeeper;
 
 public partial class MainMenu : CanvasLayer
 {

@@ -1,7 +1,7 @@
 using Godot;
-using MartKeeper.Core;
+using Martkeeper.Resources;
 
-namespace MartKeeper.Entities;
+namespace Martkeeper.Entities;
 
 public partial class Shelf : StaticBody2D
 {

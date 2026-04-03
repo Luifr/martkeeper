@@ -1,6 +1,6 @@
 using Godot;
 
-namespace MartKeeper;
+namespace Martkeeper.Entities;
 
 public partial class VisualTimer : Node2D
 {

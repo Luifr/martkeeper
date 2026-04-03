@@ -1,6 +1,6 @@
 using Godot;
 
-namespace MartKeeper.Entities;
+namespace Martkeeper.Entities;
 
 public partial class Customer : Person
 {

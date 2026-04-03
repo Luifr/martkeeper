@@ -1,6 +1,6 @@
 using Godot;
 
-namespace MartKeeper.Core;
+namespace Martkeeper.Resources;
 
 [GlobalClass]
 // Base Class for Products, Tools and so on

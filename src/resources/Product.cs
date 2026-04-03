@@ -1,6 +1,6 @@
 using Godot;
 
-namespace MartKeeper.Core;
+namespace Martkeeper.Resources;
 
 [GlobalClass]
 public partial class Product : Item { }
