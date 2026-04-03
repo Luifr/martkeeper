@@ -7,34 +7,32 @@ public partial class Person : RigidBody2D
   [Export]
   public float Speed = 600f;
 
-  public Hand leftHand;
-  public Hand rightHand;
-  public RayCast2D RayCast;
+  protected Hand LeftHand;
+  protected Hand RightHand;
 
   private CollisionShape2D HeadShape;
   private CollisionShape2D LeftShoulderShape;
   private CollisionShape2D RightShoulderShape;
 
   [Export]
-  public float headRadius = 40;
+  public float HeadRadius = 40;
 
   [Export]
-  public float shoulderRadiusRatio = 0.35f;
+  public float ShoulderRadiusRatio = 0.35f;
 
   [Export]
-  public float turnSpeedMultiplier = 0.1f;
+  public float TurnSpeedMultiplier = 0.1f;
 
   [Export]
-  Color headColor = Color.Color8(0, 0, 0);
+  public Color HeadColor = Color.Color8(0, 0, 0);
 
   [Export]
-  Color shirtColor = Color.Color8(0, 255, 0);
+  public Color ShirtColor = Color.Color8(0, 255, 0);
 
   public override void _Ready()
   {
-    RayCast = GetNode<RayCast2D>("RayCast2D");
-    leftHand = GetNode<Hand>("%LeftHand");
-    rightHand = GetNode<Hand>("%RightHand");
+    LeftHand = GetNode<Hand>("%LeftHand");
+    RightHand = GetNode<Hand>("%RightHand");
 
     HeadShape = GetNode<CollisionShape2D>("HeadShape");
     LeftShoulderShape = GetNode<CollisionShape2D>("LeftShoulderShape");
@@ -42,39 +40,39 @@ public partial class Person : RigidBody2D
 
     if (HeadShape.Shape is CircleShape2D circleHeadShape)
     {
-      circleHeadShape.Radius = headRadius;
+      circleHeadShape.Radius = HeadRadius;
     }
 
     if (LeftShoulderShape.Shape is CircleShape2D circleLeftShoulderShape)
     {
-      circleLeftShoulderShape.Radius = headRadius * shoulderRadiusRatio;
+      circleLeftShoulderShape.Radius = HeadRadius * ShoulderRadiusRatio;
     }
 
     if (RightShoulderShape.Shape is CircleShape2D circleRightShoulderShape)
     {
-      circleRightShoulderShape.Radius = headRadius * shoulderRadiusRatio;
+      circleRightShoulderShape.Radius = HeadRadius * ShoulderRadiusRatio;
     }
   }
 
   protected void LookAtWalkingDirection(Vector2 direction)
   {
-    Rotate(GetAngleTo(GlobalPosition + direction) * turnSpeedMultiplier);
+    Rotate(GetAngleTo(GlobalPosition + direction) * TurnSpeedMultiplier);
   }
 
   public override void _Draw()
   {
     // Shoulder
-    DrawCircle(new Vector2(0, 35), headRadius * shoulderRadiusRatio, shirtColor);
-    DrawCircle(new Vector2(0, -35), headRadius * shoulderRadiusRatio, shirtColor);
+    DrawCircle(new Vector2(0, 35), HeadRadius * ShoulderRadiusRatio, ShirtColor);
+    DrawCircle(new Vector2(0, -35), HeadRadius * ShoulderRadiusRatio, ShirtColor);
 
     // Nose
     DrawCircle(
-      new Vector2(headRadius, 0),
-      headRadius * shoulderRadiusRatio * shoulderRadiusRatio,
-      headColor
+      new Vector2(HeadRadius, 0),
+      HeadRadius * ShoulderRadiusRatio * ShoulderRadiusRatio,
+      HeadColor
     );
 
     // Head
-    DrawCircle(Vector2.Zero, headRadius, headColor);
+    DrawCircle(Vector2.Zero, HeadRadius, HeadColor);
   }
 }

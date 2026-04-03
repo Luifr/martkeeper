@@ -5,10 +5,13 @@ namespace MartKeeper.Entities;
 public partial class Player : Person
 {
   private Vector2 _moveInput;
+  private RayCast2D _rayCast;
 
   public override void _Ready()
   {
     base._Ready();
+
+    _rayCast = GetNode<RayCast2D>("RayCast2D");
   }
 
   public override void _Process(double delta)
@@ -36,7 +39,7 @@ public partial class Player : Person
   private void TryInteract()
   {
     GD.Print("TryInteract: Lets try to interact");
-    if (!RayCast.IsColliding())
+    if (!_rayCast.IsColliding())
     {
       GD.Print("TryInteract: No hit");
       // Nothing to interact with
@@ -45,7 +48,7 @@ public partial class Player : Person
 
     GD.Print("TryInteract: Hit");
 
-    var gameObject = RayCast.GetCollider();
+    var gameObject = _rayCast.GetCollider();
 
     if (gameObject is Shelf shelf)
     {
@@ -65,13 +68,13 @@ public partial class Player : Person
 
   private void TryInteractShelf(Shelf shelf)
   {
-    if (leftHand.CurrentItem?.NameKey == shelf.product.NameKey)
+    if (LeftHand.CurrentItem?.NameKey == shelf.product.NameKey)
     {
-      PutItemFromHandToShelf(shelf, leftHand);
+      PutItemFromHandToShelf(shelf, LeftHand);
     }
-    if (rightHand.CurrentItem?.NameKey == shelf.product.NameKey)
+    if (RightHand.CurrentItem?.NameKey == shelf.product.NameKey)
     {
-      PutItemFromHandToShelf(shelf, rightHand);
+      PutItemFromHandToShelf(shelf, RightHand);
     }
   }
 
@@ -81,7 +84,7 @@ public partial class Player : Person
     if (stock.product == null)
       return;
 
-    rightHand.CurrentItem = stock.product;
+    RightHand.CurrentItem = stock.product;
   }
 
   private void PutItemFromHandToShelf(Shelf shelf, Hand hand)

@@ -7,3 +7,5 @@
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_635qg")
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="3" unique_id=1567648651]

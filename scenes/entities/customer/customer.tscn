@@ -7,8 +7,8 @@
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_8r5tc")
-shirtColor = Color(1, 0, 0, 1)
+ShirtColor = Color(1, 0, 0, 1)
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="4" unique_id=472040447]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="3" unique_id=472040447]
 path_postprocessing = 1
 debug_enabled = true
