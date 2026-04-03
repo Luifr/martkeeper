@@ -14,7 +14,7 @@ public partial class Customer : Person
     _navigationAgent2D = GetNode<NavigationAgent2D>("NavigationAgent2D");
 
     // TODO: targetPostion will later be set depending on customer state
-    _navigationAgent2D.TargetPosition = new Vector2(150, 150);
+    // _navigationAgent2D.TargetPosition = new Vector2(150, 150);
 
     var timer = new Timer
     {
@@ -31,6 +31,9 @@ public partial class Customer : Person
   public override void _IntegrateForces(PhysicsDirectBodyState2D state)
   {
     Vector2 targetVelocity = Vector2.Zero;
+
+    if (_moveTo.Length() == 0)
+      return;
 
     var direction = _moveTo - GlobalPosition;
     if (direction.Length() > 2f)

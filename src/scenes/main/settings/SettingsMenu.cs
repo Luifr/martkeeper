@@ -1,5 +1,6 @@
-using System;
 using Godot;
+
+namespace MartKeeper;
 
 public partial class SettingsMenu : Control
 {

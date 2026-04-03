@@ -1,4 +1,5 @@
 using Godot;
+using MartKeeper.Types;
 
 namespace MartKeeper;
 
@@ -11,8 +12,6 @@ public partial class Main : Node
     SetupLanguage();
 
     RenderingServer.SetDefaultClearColor(new Color(230 / 255f, 227 / 255f, 197 / 255f));
-
-    GD.Print(TR.HELLO_WORLD);
   }
 
   public override void _Process(double delta) { }

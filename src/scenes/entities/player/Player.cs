@@ -1,4 +1,5 @@
 using Godot;
+using MartKeeper.Types;
 
 namespace MartKeeper.Entities;
 

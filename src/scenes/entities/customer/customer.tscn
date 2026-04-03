@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bnyn3t8fsgnaj"]
 
-[ext_resource type="Script" uid="uid://blou021ab7hi1" path="res://scenes/entities/customer/Customer.cs" id="1_8r5tc"]
-[ext_resource type="PackedScene" uid="uid://ul0nqkirfhyb" path="res://scenes/entities/person/person.tscn" id="2_dojde"]
-[ext_resource type="PackedScene" uid="uid://dpag2w0hn18rp" path="res://scenes/entities/customer/VisualTimer/visual_timer.tscn" id="3_dojde"]
+[ext_resource type="Script" uid="uid://blou021ab7hi1" path="res://src/scenes/entities/customer/Customer.cs" id="1_8r5tc"]
+[ext_resource type="PackedScene" uid="uid://ul0nqkirfhyb" path="res://src/scenes/entities/person/person.tscn" id="2_dojde"]
+[ext_resource type="PackedScene" uid="uid://dpag2w0hn18rp" path="res://src/scenes/entities/customer/visual_timer/visual_timer.tscn" id="3_dojde"]
 
 [node name="Customer" unique_id=1602392041 instance=ExtResource("2_dojde")]
 collision_layer = 4
