@@ -38,7 +38,7 @@ public partial class Main : Node
     // Run each tool that has an execute method
     foreach (var tool in tools)
     {
-      if (tool.HasMethod("Execute"))
+      if (tool.HasMethod("Execute") && OS.IsDebugBuild())
       {
         tool.Call("Execute");
       }

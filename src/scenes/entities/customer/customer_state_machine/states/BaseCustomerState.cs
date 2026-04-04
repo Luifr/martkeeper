@@ -19,7 +19,7 @@ public partial class BaseCustomerState : Node, ICustomerState
 
   public void Enter()
   {
-    GD.Print("Customer base state");
+    // TODO: store this path in a shared constant
     var allProducts = GD.Load<AllProducts>("res://data/all_products.tres");
     if (allProducts != null)
     {

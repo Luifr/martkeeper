@@ -17,7 +17,6 @@ public partial class HeadingForProductCustomerState : Node, ICustomerState
 
   public void Enter()
   {
-    GD.Print("Customer heading for product state");
     // TODO: set target position
   }
 
