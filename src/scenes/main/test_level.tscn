@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bunx2368ro35c"]
 
-[ext_resource type="PackedScene" uid="uid://b4gp5h7ew4xq6" path="res://scenes/entities/player/player.tscn" id="1_6oyos"]
-[ext_resource type="PackedScene" uid="uid://b0hspc1j6re65" path="res://scenes/entities/structures/wall/wall.tscn" id="2_5fulm"]
-[ext_resource type="PackedScene" uid="uid://b6jp3i3cfb5nm" path="res://scenes/entities/structures/door/door.tscn" id="3_qir24"]
-[ext_resource type="PackedScene" uid="uid://dk1jvmrdlyrnk" path="res://scenes/entities/structures/shelf/shelf.tscn" id="4_qir24"]
+[ext_resource type="PackedScene" uid="uid://b4gp5h7ew4xq6" path="res://src/scenes/entities/player/player.tscn" id="1_6oyos"]
+[ext_resource type="PackedScene" uid="uid://b0hspc1j6re65" path="res://src/scenes/entities/structures/wall/wall.tscn" id="2_5fulm"]
+[ext_resource type="PackedScene" uid="uid://b6jp3i3cfb5nm" path="res://src/scenes/entities/structures/door/door.tscn" id="3_qir24"]
+[ext_resource type="PackedScene" uid="uid://dk1jvmrdlyrnk" path="res://src/scenes/entities/structures/shelf/shelf.tscn" id="4_qir24"]
 [ext_resource type="Resource" uid="uid://cy7rp7utpn5lg" path="res://data/products/banana.tres" id="5_1f7lt"]
-[ext_resource type="PackedScene" uid="uid://cncs2ew01drtw" path="res://scenes/entities/structures/stock/stock.tscn" id="6_1f7lt"]
-[ext_resource type="PackedScene" uid="uid://bnyn3t8fsgnaj" path="res://scenes/entities/customer/customer.tscn" id="7_xv33n"]
+[ext_resource type="PackedScene" uid="uid://cncs2ew01drtw" path="res://src/scenes/entities/structures/stock/stock.tscn" id="6_1f7lt"]
+[ext_resource type="PackedScene" uid="uid://bnyn3t8fsgnaj" path="res://src/scenes/entities/customer/customer.tscn" id="7_xv33n"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xv33n"]
 vertices = PackedVector2Array(710.97656, 434.89063, 665.02344, 434.89063, 263, 432, 263, 228, 665.0781, 177.60156, 710.9219, 177.60156, 904, 208, 904, 412, 1104, 47, 1104, 600, 1016, 412, 1016, 208, 710.9219, 47, 710.97656, 600, 592.7422, 785.35156, 468.42188, 789.6328, 473.7578, 658, 477.78125, 658, 588.72656, 629.6719, 477.78125, 600, 596.21875, 600, 596.21875, 629.89844, 665.02344, 600, 47, 600, 151, 432, 47, 47, 151, 228, 665.0781, 47)

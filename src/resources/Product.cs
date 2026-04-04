@@ -2,5 +2,5 @@ using Godot;
 
 namespace Martkeeper.Resources;
 
-[GlobalClass]
+[GlobalClass, Tool]
 public partial class Product : Item { }

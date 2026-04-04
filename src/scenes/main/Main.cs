@@ -11,6 +11,8 @@ public partial class Main : Node
     SetupLanguage();
 
     RenderingServer.SetDefaultClearColor(new Color(230 / 255f, 227 / 255f, 197 / 255f));
+
+    CleanUpEditorTools();
   }
 
   public override void _Process(double delta) { }
@@ -26,5 +28,23 @@ public partial class Main : Node
     {
       TranslationServer.SetLocale(language);
     }
+  }
+
+  private void CleanUpEditorTools()
+  {
+    var toolsNode = GetNode<Node>("%Tools");
+    var tools = toolsNode.GetChildren();
+
+    // Run each tool that has an execute method
+    foreach (var tool in tools)
+    {
+      if (tool.HasMethod("Execute"))
+      {
+        tool.Call("Execute");
+      }
+    }
+
+    // Remove from from scene as not needed in run time
+    toolsNode.QueueFree();
   }
 }

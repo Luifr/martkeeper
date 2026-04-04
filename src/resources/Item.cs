@@ -2,7 +2,7 @@ using Godot;
 
 namespace Martkeeper.Resources;
 
-[GlobalClass]
+[GlobalClass, Tool]
 // Base Class for Products, Tools and so on
 public partial class Item : Resource
 {

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ua5q1io8pn3c"]
 
-[ext_resource type="Script" uid="uid://bk8hp8x6vyffy" path="res://scenes/main/main_menu/MainMenu.cs" id="1_0kd0q"]
-[ext_resource type="PackedScene" uid="uid://bunx2368ro35c" path="res://scenes/main/test_level.tscn" id="2_r7wpq"]
-[ext_resource type="PackedScene" uid="uid://jv0rebivhiv7" path="res://scenes/main/settings/SettingsMenu.tscn" id="3_0kd0q"]
+[ext_resource type="Script" uid="uid://bk8hp8x6vyffy" path="res://src/scenes/main/main_menu/MainMenu.cs" id="1_0kd0q"]
+[ext_resource type="PackedScene" uid="uid://bunx2368ro35c" path="res://src/scenes/main/test_level.tscn" id="2_r7wpq"]
+[ext_resource type="PackedScene" path="res://src/scenes/main/settings/settings_menu.tscn" id="3_3dhrf"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=1099749950]
 script = ExtResource("1_0kd0q")
@@ -52,6 +52,6 @@ custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 text = "Quit"
 
-[node name="SettingsMenu" parent="." unique_id=1896719537 instance=ExtResource("3_0kd0q")]
+[node name="SettingsMenu" parent="." unique_id=1103460238 instance=ExtResource("3_3dhrf")]
 unique_name_in_owner = true
 visible = false

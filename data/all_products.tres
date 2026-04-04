@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AllProducts" format=3]
+
+[ext_resource type="Script" path="res://src/resources/Product.cs" id="1_a1gcy"]
+[ext_resource type="Resource" path="res://data/products/bread.tres" id="2_5qv85"]
+[ext_resource type="Resource" path="res://data/products/banana.tres" id="3_syxed"]
+[ext_resource type="Resource" path="res://data/products/orange_juice.tres" id="4_3ct2m"]
+[ext_resource type="Script" path="res://src/resources/AllProducts.cs" id="5_yunne"]
+
+[resource]
+script = ExtResource("5_yunne")
+Products = Array[ExtResource("1_a1gcy")]([ExtResource("2_5qv85"), ExtResource("3_syxed"), ExtResource("4_3ct2m")])
