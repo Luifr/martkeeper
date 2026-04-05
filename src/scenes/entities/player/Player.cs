@@ -8,6 +8,9 @@ public partial class Player : Person
   private Vector2 _moveInput;
   private RayCast2D _rayCast;
 
+  [Signal]
+  public delegate void InteractCashRegisterEventHandler(CashRegister cashRegister);
+
   public override void _Ready()
   {
     base._Ready();
@@ -51,6 +54,12 @@ public partial class Player : Person
 
     var gameObject = _rayCast.GetCollider();
 
+    if (gameObject is CashRegister cashRegister)
+    {
+      GD.Print("TryInteract: Hit Cash Register");
+      EmitSignalInteractCashRegister(cashRegister);
+      return;
+    }
     if (gameObject is Shelf shelf)
     {
       GD.Print("TryInteract: Hit Shelf");

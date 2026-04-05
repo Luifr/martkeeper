@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://bunx2368ro35c"]
 
 [ext_resource type="PackedScene" uid="uid://b4gp5h7ew4xq6" path="res://src/scenes/entities/player/player.tscn" id="1_6oyos"]
+[ext_resource type="Script" uid="uid://cge7c16tv4kaw" path="res://src/scenes/main/Level.cs" id="1_8rsi3"]
 [ext_resource type="PackedScene" uid="uid://b0hspc1j6re65" path="res://src/scenes/entities/structures/wall/wall.tscn" id="2_5fulm"]
 [ext_resource type="PackedScene" uid="uid://b6jp3i3cfb5nm" path="res://src/scenes/entities/structures/door/door.tscn" id="3_qir24"]
 [ext_resource type="PackedScene" uid="uid://dk1jvmrdlyrnk" path="res://src/scenes/entities/structures/shelf/shelf.tscn" id="4_qir24"]
 [ext_resource type="Resource" uid="uid://cy7rp7utpn5lg" path="res://data/products/banana.tres" id="5_1f7lt"]
 [ext_resource type="PackedScene" uid="uid://cncs2ew01drtw" path="res://src/scenes/entities/structures/stock/stock.tscn" id="6_1f7lt"]
+[ext_resource type="PackedScene" uid="uid://0ndsj6hc1e01" path="res://src/scenes/entities/CashRegister/CashRegister.tscn" id="7_l5hkm"]
 [ext_resource type="PackedScene" uid="uid://bnyn3t8fsgnaj" path="res://src/scenes/entities/customer/customer.tscn" id="7_xv33n"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xv33n"]
@@ -17,8 +19,10 @@ source_geometry_mode = 1
 source_geometry_group_name = &"NavigationBlock"
 
 [node name="TestLevel" type="Node" unique_id=189136369]
+script = ExtResource("1_8rsi3")
 
 [node name="Player" parent="." unique_id=1857102111 instance=ExtResource("1_6oyos")]
+unique_name_in_owner = true
 position = Vector2(469, 324)
 
 [node name="Buildings" type="Node" parent="." unique_id=1096064677]
@@ -44,6 +48,10 @@ ConnectedBody = NodePath("../../Walls/WallMiddleDown")
 position = Vector2(537, 629)
 rotation = 1.5707964
 ConnectedBody = NodePath("../../Walls/WallDownRight")
+
+[node name="CashRegister" parent="Buildings" unique_id=814154694 instance=ExtResource("7_l5hkm")]
+unique_name_in_owner = true
+position = Vector2(470, 104)
 
 [node name="Walls" type="Node" parent="." unique_id=1845359706]
 
