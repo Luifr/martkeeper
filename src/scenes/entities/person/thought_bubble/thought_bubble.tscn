@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bmf7r0rcbyup2"]
+
+[ext_resource type="Script" uid="uid://017ik81chodq" path="res://src/scenes/entities/person/thought_bubble/ThoughtBubble.cs" id="1_qq7bt"]
+
+[node name="ThoughtBubble" type="Node2D" unique_id=1932389683]
+script = ExtResource("1_qq7bt")
+Width = 30.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1449804744]
