@@ -15,7 +15,7 @@ public readonly record struct CustomerStateName(string value)
   public static implicit operator CustomerStateName(string value) => new(value);
 }
 
-public abstract partial class CustomerState(CustomerStateName name, Customer customer)
+public abstract class CustomerState(CustomerStateName name, Customer customer)
 {
   public readonly CustomerStateName StateName = name;
   protected readonly Customer _customer = customer;

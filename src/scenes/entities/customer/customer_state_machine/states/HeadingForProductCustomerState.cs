@@ -1,6 +1,6 @@
 namespace Martkeeper.Entities;
 
-public partial class CustomerStateHeadingForProduct(Customer customer)
+public class CustomerStateHeadingForProduct(Customer customer)
   : CustomerState(CustomerStateName.HEADING_FOR_PRODUCT, customer)
 {
   public override void Enter(CustomerStateTransition transitionData)
