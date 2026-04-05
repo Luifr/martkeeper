@@ -8,42 +8,37 @@ public partial class CustomerStateMachine : Node
 {
   [Export]
   public Customer TargetCustomer;
+  private CustomerState _currentState;
 
-  private CustomerState _currentState = CustomerState.BASE;
-  private Dictionary<CustomerState, ICustomerState> _customerStateHandlerHash = new();
+  private Dictionary<CustomerStateName, CustomerState> _statesDictionary;
 
   public override void _Ready()
   {
     Debug.Assert(TargetCustomer != null, "Customer not assigned to CustomerStateMachine");
 
-    var children = GetChildren();
-
-    foreach (Node child in children)
+    _statesDictionary = new()
     {
-      if (child is ICustomerState customerState)
-      {
-        _customerStateHandlerHash[customerState.State] = customerState;
-        GD.Print("TargetCustomer in state machine ", TargetCustomer);
-        customerState.Init(ChangeState, TargetCustomer);
-      }
-      else
-      {
-        GD.PushError("Child of CustomerStateMachine is not a ICustomerState ", child);
-      }
-    }
+      { CustomerStateName.BASE, new CustomerStateStart(TargetCustomer) },
+      { CustomerStateName.HEADING_FOR_PRODUCT, new CustomerStateHeadingForProduct(TargetCustomer) },
+    };
 
-    _customerStateHandlerHash[_currentState].Enter();
+    _currentState = _statesDictionary[CustomerStateName.BASE];
+    _currentState.Enter(new FromNullToBaseTransition());
   }
 
-  private void ChangeState(CustomerState newState)
+  private void ChangeState(CustomerStateTransition newStateTransition)
   {
-    _customerStateHandlerHash[_currentState].Exit();
-    _currentState = newState;
-    _customerStateHandlerHash[_currentState].Enter();
+    _currentState.Exit();
+    _currentState = _statesDictionary[newStateTransition.To];
+    _currentState.Enter(newStateTransition);
   }
 
   public override void _Process(double delta)
   {
-    _customerStateHandlerHash[_currentState].Update(delta);
+    var newStateTransition = _currentState.Update();
+    if (newStateTransition != null)
+    {
+      ChangeState(newStateTransition);
+    }
   }
 }
