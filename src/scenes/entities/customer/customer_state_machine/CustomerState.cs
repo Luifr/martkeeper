@@ -15,16 +15,15 @@ public readonly record struct CustomerStateName(string value)
   public static implicit operator CustomerStateName(string value) => new(value);
 }
 
-public abstract partial class CustomerState
+public abstract partial class CustomerState(CustomerStateName name, Customer customer)
 {
-  public abstract CustomerStateName StateName { get; }
-
-  protected Customer _customer;
+  public readonly CustomerStateName StateName = name;
+  protected readonly Customer _customer = customer;
 
   /// <returns>The next state. Return null if should not change states.</returns>
   public abstract CustomerStateTransition Update();
 
-  public virtual void Enter(CustomerState prevState, CustomerStateTransition stateTransition) { }
+  public virtual void Enter(CustomerStateTransition stateTransition) { }
 
-  public virtual void Exit(CustomerState nextState) { }
+  public virtual void Exit() { }
 }

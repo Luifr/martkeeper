@@ -1,17 +1,11 @@
-
-
 using Martkeeper.Resources;
 
 namespace Martkeeper.Entities;
 
-public class HeadingForProductNeedStateTransition : CustomerStateTransition
+public class FromBaseToHeadingForProductNeedTransition(Product need)
+  : CustomerStateTransition(CustomerStateName.BASE, CustomerStateName.HEADING_FOR_PRODUCT)
 {
-  public override CustomerStateName TargetStateName { get => CustomerStateName.HEADING_FOR_PRODUCT; }
-
-  public Product Need;
-
-  public HeadingForProductNeedStateTransition(Product need)
-  {
-    Need = need;
-  }
+  public Product Need = need;
 }
+
+public class FromNullToBaseTransition() : CustomerStateTransition(null, CustomerStateName.BASE) { }

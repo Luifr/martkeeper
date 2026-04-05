@@ -1,15 +1,11 @@
 namespace Martkeeper.Entities;
 
-public partial class CustomerStateHeadingForProduct(Customer customer) : CustomerState
+public partial class CustomerStateHeadingForProduct(Customer customer)
+  : CustomerState(CustomerStateName.HEADING_FOR_PRODUCT, customer)
 {
-  public override CustomerStateName StateName { get => CustomerStateName.BASE; }
-  private new Customer _customer = customer;
-
-  public override void Enter(CustomerState prevState, CustomerStateTransition transitionData)
+  public override void Enter(CustomerStateTransition transitionData)
   {
-    if (transitionData is HeadingForProductNeedStateTransition needTransition)
-    {
-    }
+    if (transitionData is FromBaseToHeadingForProductNeedTransition needTransition) { }
   }
 
   public override CustomerStateTransition Update()

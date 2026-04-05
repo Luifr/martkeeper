@@ -4,11 +4,9 @@ using Martkeeper.Resources;
 
 namespace Martkeeper.Entities;
 
-public partial class CustomerStateBase(Customer customer) : CustomerState
+public partial class CustomerStateStart(Customer customer)
+  : CustomerState(CustomerStateName.BASE, customer)
 {
-  public override CustomerStateName StateName { get => CustomerStateName.BASE; }
-  private new Customer _customer = customer;
-
   public override CustomerStateTransition Update()
   {
     // TODO: store this path in a shared constant
@@ -17,6 +15,6 @@ public partial class CustomerStateBase(Customer customer) : CustomerState
     GD.Print("all products ", allProducts.Products, " ", allProducts.Products.Count);
     GD.Print(_customer);
     _customer.need = allProducts.Products.PickRandom();
-    return new HeadingForProductNeedStateTransition(_customer.need);
+    return new FromBaseToHeadingForProductNeedTransition(_customer.need);
   }
 }

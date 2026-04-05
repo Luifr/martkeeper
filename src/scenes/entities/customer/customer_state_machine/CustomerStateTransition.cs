@@ -1,8 +1,7 @@
-
-
 namespace Martkeeper.Entities;
 
-public abstract partial class CustomerStateTransition
+public abstract partial class CustomerStateTransition(CustomerStateName to, CustomerStateName from)
 {
-  public abstract CustomerStateName TargetStateName { get; }
+  public readonly CustomerStateName To = to;
+  public readonly CustomerStateName From = from;
 }
