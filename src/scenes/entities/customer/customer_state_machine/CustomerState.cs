@@ -1,16 +1,29 @@
 namespace Martkeeper.Entities;
 
-public readonly record struct CustomerState(string value)
+public readonly record struct CustomerStateName(string value)
 {
   // Setup customer
-  public static CustomerState BASE = "BASE";
-  public static CustomerState HEADING_FOR_PRODUCT = "HEADING_FOR_PRODUCT";
-  public static CustomerState WAITING_FOR_PRODUCT = "WAITING_FOR_PRODUCT";
-  public static CustomerState HEADING_TO_CHECKOUT = "HEADING_TO_CHECKOUT";
-  public static CustomerState WAITING_ON_CHEKCOUT = "WAITING_ON_CHEKCOUT";
-  public static CustomerState LEAVING = "LEAVING";
+  public static readonly CustomerStateName BASE = "BASE";
+  public static readonly CustomerStateName HEADING_FOR_PRODUCT = "HEADING_FOR_PRODUCT";
+  public static readonly CustomerStateName WAITING_FOR_PRODUCT = "WAITING_FOR_PRODUCT";
+  public static readonly CustomerStateName HEADING_TO_CHECKOUT = "HEADING_TO_CHECKOUT";
+  public static readonly CustomerStateName WAITING_ON_CHEKCOUT = "WAITING_ON_CHEKCOUT";
+  public static readonly CustomerStateName LEAVING = "LEAVING";
 
-  public static implicit operator string(CustomerState key) => key.value;
+  public static implicit operator string(CustomerStateName key) => key.value;
 
-  public static implicit operator CustomerState(string value) => new(value);
+  public static implicit operator CustomerStateName(string value) => new(value);
+}
+
+public abstract class CustomerState(CustomerStateName name, Customer customer)
+{
+  public readonly CustomerStateName StateName = name;
+  protected readonly Customer _customer = customer;
+
+  /// <returns>The next state. Return null if should not change states.</returns>
+  public abstract CustomerStateTransition Update();
+
+  public virtual void Enter(CustomerStateTransition stateTransition) { }
+
+  public virtual void Exit() { }
 }
