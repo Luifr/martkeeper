@@ -1,19 +1,18 @@
-using Martkeeper.Resources;
-
 namespace Martkeeper.Entities;
 
-public partial class CustomerStateHeadingForProduct(Customer customer, Product product) : CustomerState
+public partial class CustomerStateHeadingForProduct(Customer customer) : CustomerState
 {
+  public override CustomerStateName StateName { get => CustomerStateName.BASE; }
   private new Customer _customer = customer;
 
-  private readonly Product _product = product;
-
-  public override void Enter(CustomerState prevState)
+  public override void Enter(CustomerState prevState, CustomerStateTransition transitionData)
   {
-    // TODO: set target position
+    if (transitionData is HeadingForProductNeedStateTransition needTransition)
+    {
+    }
   }
 
-  public override CustomerState Update()
+  public override CustomerStateTransition Update()
   {
     // If reached target position, try to take an item, if there is a matching item there, move to next state
     return null;
