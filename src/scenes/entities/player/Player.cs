@@ -57,7 +57,7 @@ public partial class Player : Person
     if (gameObject is CashRegister cashRegister)
     {
       GD.Print("TryInteract: Hit Cash Register");
-      EmitSignal(SignalName.InteractCashRegister, cashRegister);
+      EmitSignalInteractCashRegister(cashRegister);
       return;
     }
     if (gameObject is Shelf shelf)

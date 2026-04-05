@@ -4,6 +4,8 @@ using System.Diagnostics;
 using Godot;
 using Martkeeper.Entities;
 
+namespace Martkeeper;
+
 public partial class CashRegister : StaticBody2D
 {
   private readonly List<ulong> WaitingCustomersIds = [];
@@ -14,6 +16,7 @@ public partial class CashRegister : StaticBody2D
 
   public void PlayerInteraction()
   {
+    // TODO - Check wheter the customer is actually in front of the cash register.
     if (WaitingCustomersIds.Count == 0)
     {
       Debug.Print("No customers right now");

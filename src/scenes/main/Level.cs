@@ -1,7 +1,8 @@
-using System;
 using System.Diagnostics;
 using Godot;
 using Martkeeper.Entities;
+
+namespace Martkeeper;
 
 public partial class Level : Node
 {
