@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Diagnostics;
 using Godot;
 
@@ -9,26 +10,37 @@ public partial class CustomerStateMachine : Node
   public Customer TargetCustomer;
   private CustomerState _currentState;
 
+  private Dictionary<CustomerStateName, CustomerState> _statesDictionary;
+
   public override void _Ready()
   {
+
+    _statesDictionary = new()
+    {
+      {CustomerStateName.BASE, new CustomerStateBase(TargetCustomer)},
+      {CustomerStateName.HEADING_FOR_PRODUCT, new CustomerStateHeadingForProduct(TargetCustomer)},
+    };
+
     Debug.Assert(TargetCustomer != null, "Customer not assigned to CustomerStateMachine");
     _currentState = new CustomerStateBase(TargetCustomer);
     _currentState.Enter(null);
   }
 
-  private void ChangeState(CustomerState newState)
+  private void ChangeState(CustomerStateTransition newStateTransition)
   {
-    _currentState.Exit(newState);
-    newState.Enter(_currentState);
-    _currentState = newState;
+    _currentState.Exit();
+
+    _currentState = _statesDictionary[newStateTransition.TargetStateName];
+
+    _currentState.Enter(_currentState, newStateTransition);
   }
 
   public override void _Process(double delta)
   {
-    var nextState = _currentState.Update();
-    if (nextState != null)
+    var newStateTransition = _currentState.Update();
+    if (newStateTransition != null)
     {
-      ChangeState(nextState);
+      ChangeState(newStateTransition);
     }
   }
 }
