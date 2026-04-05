@@ -4,8 +4,7 @@ using Martkeeper.Resources;
 
 namespace Martkeeper.Entities;
 
-public class CustomerStateStart(Customer customer)
-  : CustomerState(CustomerStateName.BASE, customer)
+public class CustomerStateStart(Customer customer) : CustomerState(CustomerStateName.BASE, customer)
 {
   public override CustomerStateTransition Update()
   {

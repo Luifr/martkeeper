@@ -5,7 +5,10 @@ public class CustomerStateHeadingForProduct(Customer customer)
 {
   public override void Enter(CustomerStateTransition transitionData)
   {
-    if (transitionData is FromBaseToHeadingForProductNeedTransition needTransition) { }
+    if (transitionData is FromBaseToHeadingForProductNeedTransition needTransition)
+    {
+      _customer.EnableThought(needTransition.Need.Texture);
+    }
   }
 
   public override CustomerStateTransition Update()

@@ -4,6 +4,5 @@
 
 [node name="ThoughtBubble" type="Node2D" unique_id=1932389683]
 script = ExtResource("1_qq7bt")
-Width = 30.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1449804744]
