@@ -1,29 +1,21 @@
-using System;
-using Godot;
+using Martkeeper.Resources;
 
 namespace Martkeeper.Entities;
 
-public partial class HeadingForProductCustomerState : Node, ICustomerState
+public partial class CustomerStateHeadingForProduct(Customer customer, Product product) : CustomerState
 {
-  public CustomerState State { get; } = CustomerState.HEADING_FOR_PRODUCT;
-  private Customer _customer;
-  private Action<CustomerState> _changeState;
+  private new Customer _customer = customer;
 
-  public void Init(Action<CustomerState> ChangeState, Customer customer)
-  {
-    _changeState = ChangeState;
-    _customer = customer;
-  }
+  private readonly Product _product = product;
 
-  public void Enter()
+  public override void Enter(CustomerState prevState)
   {
     // TODO: set target position
   }
 
-  public void Update(double delta)
+  public override CustomerState Update()
   {
     // If reached target position, try to take an item, if there is a matching item there, move to next state
+    return null;
   }
-
-  public void Exit() { }
 }
