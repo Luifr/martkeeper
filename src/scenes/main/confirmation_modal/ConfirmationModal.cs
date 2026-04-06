@@ -34,7 +34,7 @@ public partial class ConfirmationModal : Control
     UiStack.Instance.Push(CloseConfirmationModal);
 
     if (PauseGame)
-      GetTree().Paused = PauseGame;
+      GetTree().Paused = true;
 
     if (!string.IsNullOrEmpty(_titleLabelText))
       _titleLabel.Text = _titleLabelText;
