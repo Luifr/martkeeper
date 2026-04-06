@@ -8,3 +8,5 @@ FULLSCREEN_TITLE,Fullscreen,Tela Cheia,Vollbild
 AUDIO_TITLE,Audio,Audio,Audio
 MAIN_VOLUME_TITLE,Main Volume,Volume Principal,Hauptvolumen
 MUSIC_VOLUME_TITLE,Music Volume,Volume da Música,Musiklautstärke
+QUIT,Quit,Sair,Beenden
+QUIT_CONFIRMATION_MESSAGE,Are you sure you wanna quit?,Tem certeza de que quer fechar o jogo?,Bust du sicher dass du die Spiel beenden willst?

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://w1tcx8hlykc3"]
+
+[ext_resource type="Script" uid="uid://3jstq511m6o5" path="res://src/scenes/main/confirmation_modal/ConfirmationModal.cs" id="1_kdp1v"]
+
+[node name="ConfirmationModal" type="Panel" unique_id=1827255924]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"SemiTransparentPanel"
+script = ExtResource("1_kdp1v")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1740506133]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -325.0
+offset_top = -112.0
+offset_right = 325.0
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"BorderedPanelContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=887215158]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="PanelContainer/VBoxContainer" unique_id=798795342]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Message"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HSeparator" type="Control" parent="PanelContainer/VBoxContainer" unique_id=250867567]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=179237143]
+layout_mode = 2
+
+[node name="Separator" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer" unique_id=1894344867]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CancelButton" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer" unique_id=24062477]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "Cancel"
+
+[node name="Separator2" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer" unique_id=1666995971]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ConfirmButton" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer" unique_id=2037311233]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "Confirm"
+
+[node name="Separator3" type="Control" parent="PanelContainer/VBoxContainer/VBoxContainer" unique_id=1717869066]
+layout_mode = 2
+size_flags_horizontal = 3

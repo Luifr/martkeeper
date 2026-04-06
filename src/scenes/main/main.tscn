@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://lnqo34g2guc4"]
 
 [ext_resource type="Script" uid="uid://di3nqxmb2dgbx" path="res://src/scenes/main/Main.cs" id="1_u1xfj"]
+[ext_resource type="Script" uid="uid://sjacrej8dqqb" path="res://src/scenes/main/UiStack.cs" id="2_fub2y"]
 [ext_resource type="Script" uid="uid://cb5hljepic8c7" path="res://src/scenes/main/SceneManager.cs" id="2_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://ua5q1io8pn3c" path="res://src/scenes/main/main_menu/main_menu.tscn" id="3_k2fmo"]
 [ext_resource type="Script" uid="uid://dttgkki1yom6p" path="res://src/tools/ProductScanner.cs" id="4_vw57g"]
@@ -8,16 +9,19 @@
 [node name="Main" type="Node" unique_id=40022650]
 script = ExtResource("1_u1xfj")
 
-[node name="SceneManager" type="Node" parent="." unique_id=217953294 groups=["SceneManager"]]
+[node name="UIStack" type="Node" parent="." unique_id=440616733]
+script = ExtResource("2_fub2y")
+
+[node name="SceneManager" type="Node" parent="." unique_id=217953294]
 script = ExtResource("2_k2fmo")
 
 [node name="SceneContainer" type="Node" parent="SceneManager" unique_id=2076956797]
 
 [node name="MainMenu" parent="SceneManager/SceneContainer" unique_id=1099749950 instance=ExtResource("3_k2fmo")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="SceneManager" unique_id=77246341]
+[node name="TransitionCanvasLayer" type="CanvasLayer" parent="SceneManager" unique_id=77246341]
 
-[node name="TransitionColorRect" type="ColorRect" parent="SceneManager/CanvasLayer" unique_id=1223825910]
+[node name="TransitionColorRect" type="ColorRect" parent="SceneManager/TransitionCanvasLayer" unique_id=1223825910]
 unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0

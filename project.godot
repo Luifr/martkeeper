@@ -30,7 +30,6 @@ project/assembly_name="Martkeeper"
 
 [global_group]
 
-SceneManager=""
 NavigationBlock=""
 
 [gui]

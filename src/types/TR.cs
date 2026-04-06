@@ -10,15 +10,17 @@ public readonly struct TrKey
   private TrKey(string value) => _value = value;
 
   // --- Generated Keys ---
-  public static readonly TrKey BANANA = new TrKey("BANANA");
-  public static readonly TrKey BREAD = new TrKey("BREAD");
-  public static readonly TrKey ORANGE_JUICE = new TrKey("ORANGE_JUICE");
-  public static readonly TrKey VIDEO_TITLE = new TrKey("VIDEO_TITLE");
-  public static readonly TrKey RESOLUTION_TITLE = new TrKey("RESOLUTION_TITLE");
-  public static readonly TrKey FULLSCREEN_TITLE = new TrKey("FULLSCREEN_TITLE");
-  public static readonly TrKey AUDIO_TITLE = new TrKey("AUDIO_TITLE");
-  public static readonly TrKey MAIN_VOLUME_TITLE = new TrKey("MAIN_VOLUME_TITLE");
-  public static readonly TrKey MUSIC_VOLUME_TITLE = new TrKey("MUSIC_VOLUME_TITLE");
+  public static readonly TrKey BANANA = "BANANA";
+  public static readonly TrKey BREAD = "BREAD";
+  public static readonly TrKey ORANGE_JUICE = "ORANGE_JUICE";
+  public static readonly TrKey VIDEO_TITLE = "VIDEO_TITLE";
+  public static readonly TrKey RESOLUTION_TITLE = "RESOLUTION_TITLE";
+  public static readonly TrKey FULLSCREEN_TITLE = "FULLSCREEN_TITLE";
+  public static readonly TrKey AUDIO_TITLE = "AUDIO_TITLE";
+  public static readonly TrKey MAIN_VOLUME_TITLE = "MAIN_VOLUME_TITLE";
+  public static readonly TrKey MUSIC_VOLUME_TITLE = "MUSIC_VOLUME_TITLE";
+  public static readonly TrKey QUIT = "QUIT";
+  public static readonly TrKey QUIT_CONFIRMATION_MESSAGE = "QUIT_CONFIRMATION_MESSAGE";
 
   // --- Localization Logic ---
 
@@ -28,6 +30,11 @@ public readonly struct TrKey
   public static implicit operator string(TrKey key)
   {
     return TranslationServer.Translate(key._value);
+  }
+
+  public static implicit operator TrKey(string value)
+  {
+    return new TrKey(value);
   }
 
   public string GetRaw() => _value;
@@ -46,6 +53,8 @@ public static class TR
   public static TrKey AUDIO_TITLE => TrKey.AUDIO_TITLE;
   public static TrKey MAIN_VOLUME_TITLE => TrKey.MAIN_VOLUME_TITLE;
   public static TrKey MUSIC_VOLUME_TITLE => TrKey.MUSIC_VOLUME_TITLE;
+  public static TrKey QUIT => TrKey.QUIT;
+  public static TrKey QUIT_CONFIRMATION_MESSAGE => TrKey.QUIT_CONFIRMATION_MESSAGE;
 }
 
 public static class Locale
