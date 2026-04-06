@@ -1,5 +1,17 @@
 [gd_resource type="Theme" format=3 uid="uid://x0vo5yoi3gk2"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sx0q5"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.4113405, 0.6047325, 0.89871764, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tpbsb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpbsb"]
@@ -9,7 +21,12 @@ content_margin_right = 15.0
 content_margin_bottom = 15.0
 bg_color = Color(0.4113405, 0.6047325, 0.89871764, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5sm08"]
+bg_color = Color(1, 1, 1, 0.39215687)
+
 [resource]
+BorderedPanelContainer/base_type = &"PanelContainer"
+BorderedPanelContainer/styles/panel = SubResource("StyleBoxFlat_sx0q5")
 Button/font_sizes/font_size = 32
 CheckButton/colors/font_color = Color(1, 1, 1, 1)
 CheckButton/font_sizes/font_size = 16
@@ -20,6 +37,12 @@ HeaderMedium/base_type = &"Label"
 HeaderMedium/font_sizes/font_size = 32
 HeaderSmall/font_sizes/font_size = 24
 Label/font_sizes/font_size = 16
+MarginContainer/constants/margin_bottom = 16
+MarginContainer/constants/margin_left = 16
+MarginContainer/constants/margin_right = 16
+MarginContainer/constants/margin_top = 16
 OptionButton/font_sizes/font_size = 12
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_tpbsb")
+SemiTransparentPanel/base_type = &"Panel"
+SemiTransparentPanel/styles/panel = SubResource("StyleBoxFlat_5sm08")
 VBoxContainer/constants/separation = 4

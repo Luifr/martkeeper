@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Godot;
-using Martkeeper.Resources;
+using Martkeeper.Constants;
 
 namespace Martkeeper.Entities;
 
@@ -8,8 +8,7 @@ public class CustomerStateStart(Customer customer) : CustomerState(CustomerState
 {
   public override CustomerStateTransition Update()
   {
-    // TODO: store this path in a shared constant
-    var allProducts = GD.Load<AllProducts>("res://data/all_products.tres");
+    var allProducts = ResourceConstants.AllProductsResource;
     Debug.Assert(allProducts != null, "All products is null");
     GD.Print("all products ", allProducts.Products, " ", allProducts.Products.Count);
     GD.Print(_customer);

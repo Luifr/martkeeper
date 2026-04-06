@@ -12,8 +12,22 @@ public enum TransitionMode
 
 public partial class SceneManager : Node
 {
+  public static SceneManager Instance;
+
   private Node _sceneContainer;
   private ColorRect _transitionColorRect;
+
+  public override void _EnterTree()
+  {
+    if (Instance != null)
+    {
+      GD.PushError("Duplicate instance of SceneManager");
+      QueueFree();
+      return;
+    }
+
+    Instance = this;
+  }
 
   public override void _Ready()
   {
