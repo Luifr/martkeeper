@@ -10,3 +10,7 @@ MAIN_VOLUME_TITLE,Main Volume,Volume Principal,Hauptvolumen
 MUSIC_VOLUME_TITLE,Music Volume,Volume da Música,Musiklautstärke
 QUIT,Quit,Sair,Beenden
 QUIT_CONFIRMATION_MESSAGE,Are you sure you wanna quit?,Tem certeza de que quer fechar o jogo?,Bust du sicher dass du die Spiel beenden willst?
+PAUSED_TITLE,Paused,Pausado,Pausiert
+RESUME_TITLE,Resume,Voltar,Fortfahren
+QUIT_TO_MAIN_MENU,Quit to main menu, Voltar para o menu principal,
+QUIT_TO_MENU_CONFIRMATION_MESSAGE,Are you sure you wanna go back to main menu?, Tem certeza de que quer voltar pro menu?,

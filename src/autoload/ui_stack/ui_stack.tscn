@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dcvelcelspbs6"]
+
+[ext_resource type="Script" uid="uid://sjacrej8dqqb" path="res://src/autoload/ui_stack/UiStack.cs" id="1_6qxk6"]
+
+[node name="UIStack" type="CanvasLayer" unique_id=1011201499]
+process_mode = 3
+layer = 10
+script = ExtResource("1_6qxk6")

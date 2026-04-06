@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://w1tcx8hlykc3"]
 
-[ext_resource type="Script" uid="uid://3jstq511m6o5" path="res://src/scenes/main/confirmation_modal/ConfirmationModal.cs" id="1_kdp1v"]
+[ext_resource type="Script" uid="uid://3jstq511m6o5" path="res://src/scenes/ui/confirmation_modal/ConfirmationModal.cs" id="1_kdp1v"]
 
 [node name="ConfirmationModal" type="Panel" unique_id=1827255924]
 process_mode = 3
