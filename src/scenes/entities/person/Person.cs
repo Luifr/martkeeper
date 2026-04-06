@@ -9,6 +9,7 @@ public partial class Person : RigidBody2D
 
   protected Hand LeftHand;
   protected Hand RightHand;
+  protected ThoughtBubble MyThoughtBubble;
 
   private CollisionShape2D HeadShape;
   private CollisionShape2D LeftShoulderShape;
@@ -33,6 +34,9 @@ public partial class Person : RigidBody2D
   {
     LeftHand = GetNode<Hand>("%LeftHand");
     RightHand = GetNode<Hand>("%RightHand");
+
+    MyThoughtBubble = GetNode<ThoughtBubble>("ThoughtBubble");
+    MyThoughtBubble.Hide();
 
     HeadShape = GetNode<CollisionShape2D>("HeadShape");
     LeftShoulderShape = GetNode<CollisionShape2D>("LeftShoulderShape");
@@ -74,5 +78,17 @@ public partial class Person : RigidBody2D
 
     // Head
     DrawCircle(Vector2.Zero, HeadRadius, HeadColor);
+  }
+
+  public void EnableThought(Texture2D texture)
+  {
+    MyThoughtBubble.UpdateTexture(texture);
+    MyThoughtBubble.Show();
+  }
+
+  public void DisableThought()
+  {
+    MyThoughtBubble.ClearTexture();
+    MyThoughtBubble.Hide();
   }
 }

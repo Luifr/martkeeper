@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bwaybma0jj0tp" path="res://src/scenes/entities/person/Person.cs" id="1_v8cm0"]
 [ext_resource type="PackedScene" uid="uid://ncvdm74ad34d" path="res://src/scenes/entities/person/hand/hand.tscn" id="2_o3o0c"]
+[ext_resource type="PackedScene" uid="uid://bmf7r0rcbyup2" path="res://src/scenes/entities/person/thought_bubble/thought_bubble.tscn" id="3_igbb8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y1cjr"]
 radius = 30.0
@@ -35,3 +36,8 @@ shape = SubResource("CircleShape2D_sei54")
 [node name="RightHand" parent="RightShoulderShape" unique_id=520462932 instance=ExtResource("2_o3o0c")]
 unique_name_in_owner = true
 position = Vector2(15, 0)
+
+[node name="ThoughtBubble" parent="." unique_id=1932389683 instance=ExtResource("3_igbb8")]
+unique_name_in_owner = true
+top_level = true
+position = Vector2(22, -34)

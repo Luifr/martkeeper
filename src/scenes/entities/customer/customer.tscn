@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://blou021ab7hi1" path="res://src/scenes/entities/customer/Customer.cs" id="1_8r5tc"]
 [ext_resource type="PackedScene" uid="uid://ul0nqkirfhyb" path="res://src/scenes/entities/person/person.tscn" id="2_dojde"]
 [ext_resource type="PackedScene" uid="uid://dpag2w0hn18rp" path="res://src/scenes/entities/customer/visual_timer/visual_timer.tscn" id="3_dojde"]
-[ext_resource type="PackedScene" uid="uid://c6g26yv2lirax" path="res://src/scenes/entities/customer/customer_state_machine/customer_state_machine.tscn" id="4_rkwfl"]
+[ext_resource type="Script" uid="uid://j5pe38i0vcdg" path="res://src/scenes/entities/customer/customer_state_machine/CustomerStateMachine.cs" id="4_rkwfl"]
 
 [node name="Customer" unique_id=1602392041 instance=ExtResource("2_dojde")]
 collision_layer = 4
@@ -11,15 +11,16 @@ collision_mask = 7
 script = ExtResource("1_8r5tc")
 ShirtColor = Color(1, 0, 0, 1)
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="3" unique_id=472040447]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="4" unique_id=472040447]
 path_postprocessing = 1
 debug_enabled = true
 
-[node name="VisualTimers" type="Node2D" parent="." index="4" unique_id=546605219]
+[node name="VisualTimers" type="Node2D" parent="." index="5" unique_id=546605219]
 position = Vector2(21, -55)
 
 [node name="ShelfVisualTimer" parent="VisualTimers" index="0" unique_id=611926337 instance=ExtResource("3_dojde")]
 unique_name_in_owner = true
 
-[node name="CustomerStateMachine" parent="." index="5" unique_id=1422555322 node_paths=PackedStringArray("TargetCustomer") instance=ExtResource("4_rkwfl")]
+[node name="CustomerStateMachine" type="Node" parent="." index="6" unique_id=1680603999 node_paths=PackedStringArray("TargetCustomer")]
+script = ExtResource("4_rkwfl")
 TargetCustomer = NodePath("..")

@@ -21,10 +21,6 @@ source_geometry_group_name = &"NavigationBlock"
 [node name="TestLevel" type="Node" unique_id=189136369]
 script = ExtResource("1_8rsi3")
 
-[node name="Player" parent="." unique_id=1857102111 instance=ExtResource("1_6oyos")]
-unique_name_in_owner = true
-position = Vector2(469, 324)
-
 [node name="Buildings" type="Node" parent="." unique_id=1096064677]
 
 [node name="Stock" parent="Buildings" unique_id=2133369044 instance=ExtResource("6_1f7lt")]
@@ -95,3 +91,7 @@ position = Vector2(172, 533)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=92387988]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_xv33n")
+
+[node name="Player" parent="." unique_id=1857102111 instance=ExtResource("1_6oyos")]
+unique_name_in_owner = true
+position = Vector2(469, 324)
