@@ -29,7 +29,6 @@ product = ExtResource("5_1f7lt")
 
 [node name="Shelf" parent="Buildings" unique_id=1405568511 instance=ExtResource("4_qir24")]
 position = Vector2(207, 330)
-product = ExtResource("5_1f7lt")
 
 [node name="Door" parent="Buildings" unique_id=1754858698 node_paths=PackedStringArray("ConnectedBody") instance=ExtResource("3_qir24")]
 position = Vector2(688, 236)
@@ -86,7 +85,7 @@ scale = Vector2(0.6831563, 0.5474157)
 position = Vector2(587, 321)
 
 [node name="Customer" parent="." unique_id=275375801 instance=ExtResource("7_xv33n")]
-position = Vector2(172, 533)
+position = Vector2(428, 555)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=92387988]
 visible = false

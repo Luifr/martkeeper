@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dyiub8ao1wyoa"]
+
+[ext_resource type="PackedScene" uid="uid://dk1jvmrdlyrnk" path="res://src/scenes/entities/structures/shelf/shelf.tscn" id="1_nvncu"]
+[ext_resource type="Texture2D" uid="uid://gi2fq47lgxly" path="res://assets/textures/Shelf.png" id="2_stnaq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bvpa"]
+atlas = ExtResource("2_stnaq")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dv5uj"]
+size = Vector2(90, 334)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jclvv"]
+size = Vector2(90, 334)
+
+[node name="Shelf" unique_id=1405568511 instance=ExtResource("1_nvncu")]
+
+[node name="BackgroundSprite" parent="." index="0" unique_id=410791398]
+texture = SubResource("AtlasTexture_2bvpa")
+
+[node name="Top" parent="." index="1" unique_id=526992081]
+visible = false
+disabled = true
+
+[node name="Left" parent="." index="3" unique_id=328430350]
+position = Vector2(-45, -25)
+shape = SubResource("RectangleShape2D_dv5uj")
+
+[node name="Right" parent="." index="4" unique_id=2028811099]
+position = Vector2(45, -25)
+shape = SubResource("RectangleShape2D_jclvv")

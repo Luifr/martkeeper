@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d06moltwxi4dp"]
+
+[ext_resource type="Script" uid="uid://c62argjrwoqbh" path="res://src/scenes/entities/structures/shelf/ShelfLocation/ShelfLocation.cs" id="1_rbtnf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbtnf"]
+
+[node name="ShelfLocation" type="CollisionShape2D" unique_id=1585616471]
+shape = SubResource("RectangleShape2D_rbtnf")
+script = ExtResource("1_rbtnf")
+
+[node name="ProductSprite" type="Sprite2D" parent="." unique_id=1820850310]
+unique_name_in_owner = true
+
+[node name="ProductCount" type="Label" parent="." unique_id=929391607]
+unique_name_in_owner = true
+offset_left = 16.0
+offset_top = -11.5
+offset_right = 17.0
+offset_bottom = 11.5

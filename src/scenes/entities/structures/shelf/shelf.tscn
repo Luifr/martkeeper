@@ -1,34 +1,53 @@
 [gd_scene format=3 uid="uid://dk1jvmrdlyrnk"]
 
 [ext_resource type="Script" uid="uid://bv4i4flv0n2r3" path="res://src/scenes/entities/structures/shelf/Shelf.cs" id="1_wu2b2"]
+[ext_resource type="Texture2D" uid="uid://gi2fq47lgxly" path="res://assets/textures/Shelf.png" id="2_kfrye"]
+[ext_resource type="PackedScene" uid="uid://d06moltwxi4dp" path="res://src/scenes/entities/structures/shelf/ShelfLocation/ShelfLocation.tscn" id="3_1renn"]
+[ext_resource type="Resource" uid="uid://cy7rp7utpn5lg" path="res://data/products/banana.tres" id="4_cxefc"]
+[ext_resource type="Resource" uid="uid://clsmvosofxubm" path="res://data/products/bread.tres" id="5_e7i1t"]
+[ext_resource type="Resource" uid="uid://bkrrpuhu8kwwd" path="res://data/products/orange_juice.tres" id="6_uc4ed"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kb4ls"]
-size = Vector2(92, 184)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1renn"]
+atlas = ExtResource("2_kfrye")
+region = Rect2(0, 0, 32, 64)
 
-[sub_resource type="Gradient" id="Gradient_munli"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0, 0, 1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i17jx"]
+size = Vector2(180, 44)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_l70l6"]
-gradient = SubResource("Gradient_munli")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7i1t"]
+size = Vector2(180, 44)
 
-[node name="Shelf" type="StaticBody2D" unique_id=1405568511 groups=["NavigationBlock"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uc4ed"]
+size = Vector2(90, 284)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02ui1"]
+size = Vector2(90, 284)
+
+[node name="Shelf" type="StaticBody2D" unique_id=1405568511 node_paths=PackedStringArray("ShelfLocations") groups=["NavigationBlock"]]
 collision_mask = 0
 script = ExtResource("1_wu2b2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1990367681]
-shape = SubResource("RectangleShape2D_kb4ls")
+ShelfLocations = [NodePath("Top"), NodePath("Bottom"), NodePath("Left"), NodePath("Right")]
 
 [node name="BackgroundSprite" type="Sprite2D" parent="." unique_id=410791398]
-scale = Vector2(0.359375, 184)
-texture = SubResource("GradientTexture1D_l70l6")
+scale = Vector2(6, 6)
+texture = SubResource("AtlasTexture_1renn")
 
-[node name="ProductSprite" type="Sprite2D" parent="." unique_id=457644810]
-unique_name_in_owner = true
+[node name="Top" parent="." unique_id=526992081 instance=ExtResource("3_1renn")]
+position = Vector2(0, -164)
+shape = SubResource("RectangleShape2D_i17jx")
+product = ExtResource("4_cxefc")
 
-[node name="ProductCount" type="Label" parent="." unique_id=824394872]
-unique_name_in_owner = true
-offset_left = 16.0
-offset_top = -11.5
-offset_right = 17.0
-offset_bottom = 11.5
+[node name="Bottom" parent="." unique_id=2077254259 instance=ExtResource("3_1renn")]
+position = Vector2(0, 164)
+shape = SubResource("RectangleShape2D_e7i1t")
+product = ExtResource("5_e7i1t")
+
+[node name="Left" parent="." unique_id=328430350 instance=ExtResource("3_1renn")]
+position = Vector2(-45, 0)
+shape = SubResource("RectangleShape2D_uc4ed")
+product = ExtResource("6_uc4ed")
+
+[node name="Right" parent="." unique_id=2028811099 instance=ExtResource("3_1renn")]
+position = Vector2(45, 0)
+shape = SubResource("RectangleShape2D_02ui1")
+product = ExtResource("4_cxefc")
