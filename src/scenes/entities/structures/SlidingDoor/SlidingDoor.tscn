@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://b80ca7wb41kbt"]
+
+[ext_resource type="Script" uid="uid://cn8u0cctwftsg" path="res://src/scenes/entities/structures/SlidingDoor/SlidingDoor.cs" id="1_0vfob"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7emg"]
+size = Vector2(136, 20)
+
+[sub_resource type="Gradient" id="Gradient_a7emg"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0vfob"]
+gradient = SubResource("Gradient_a7emg")
+width = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vfob"]
+size = Vector2(272, 200)
+
+[node name="SlidingDoor" type="Node2D" unique_id=1095645374]
+script = ExtResource("1_0vfob")
+
+[node name="RightDoor" type="StaticBody2D" parent="." unique_id=619485270]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightDoor" unique_id=534698539]
+position = Vector2(68, 0)
+shape = SubResource("RectangleShape2D_a7emg")
+
+[node name="Sprite2D" type="Sprite2D" parent="RightDoor" unique_id=694678835]
+position = Vector2(68, 0)
+scale = Vector2(136, 20)
+texture = SubResource("GradientTexture1D_0vfob")
+
+[node name="LeftDoor" type="StaticBody2D" parent="." unique_id=1472228904]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftDoor" unique_id=2012087385]
+position = Vector2(-68, 0)
+shape = SubResource("RectangleShape2D_a7emg")
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftDoor" unique_id=1300367713]
+position = Vector2(-68, 0)
+scale = Vector2(136, 20)
+texture = SubResource("GradientTexture1D_0vfob")
+
+[node name="OpenArea" type="Area2D" parent="." unique_id=71502232]
+unique_name_in_owner = true
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OpenArea" unique_id=45873440]
+shape = SubResource("RectangleShape2D_0vfob")
