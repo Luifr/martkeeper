@@ -6,6 +6,8 @@ namespace Martkeeper.UI;
 
 public partial class PauseMenu : Panel
 {
+  [Export]
+  private PackedScene MainMenu;
   public static PauseMenu Instance;
 
   private Button _resumeButton;
@@ -50,17 +52,14 @@ public partial class PauseMenu : Panel
   private void HandleClickQuitToMainMenu()
   {
     ConfirmationModal confirmationModal =
-        SceneConstants.ConfirmationModal.Instantiate<ConfirmationModal>();
+      SceneConstants.ConfirmationModal.Instantiate<ConfirmationModal>();
 
     confirmationModal.SetTitleText(TR.QUIT_TO_MENU_CONFIRMATION_MESSAGE);
 
     confirmationModal.ConfirmPressed += () =>
     {
       UiStack.Instance.Pop();
-      SceneManager.Instance.ChangeSceneToPackagedScene(
-        GD.Load<PackedScene>("uid://ua5q1io8pn3c"),
-        TransitionMode.Fade
-      );
+      SceneManager.Instance.ChangeSceneToPackagedScene(MainMenu, TransitionMode.Fade);
     };
 
     UiStack.Instance.AddChild(confirmationModal);

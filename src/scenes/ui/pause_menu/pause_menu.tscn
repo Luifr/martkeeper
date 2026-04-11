@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cf2g65wxefua5"]
 
 [ext_resource type="Script" uid="uid://ducq1srd8rgtu" path="res://src/scenes/ui/pause_menu/PauseMenu.cs" id="1_c2kkv"]
+[ext_resource type="PackedScene" uid="uid://ua5q1io8pn3c" path="res://src/scenes/main/main_menu/main_menu.tscn" id="2_fm3ov"]
 [ext_resource type="PackedScene" uid="uid://2e5fssfcmaqx" path="res://src/scenes/ui/quit_container/quit_container.tscn" id="2_jvp2j"]
 
 [node name="PauseMenu" type="Panel" unique_id=635953710]
@@ -12,6 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"SemiTransparentPanel"
 script = ExtResource("1_c2kkv")
+MainMenu = ExtResource("2_fm3ov")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=2026199138]
 layout_mode = 1
