@@ -1,7 +1,6 @@
 using System.Diagnostics;
 using Godot;
-using Martkeeper.Constants;
-using Martkeeper.Types;
+using Martkeeper.UI;
 
 namespace Martkeeper;
 
@@ -15,19 +14,18 @@ public partial class MainMenu : CanvasLayer
 
   private Button _play;
   private Button _settings;
-  private Button _quit;
 
   private SettingsMenu _settings_menu;
+  private QuitContainer _quitContainer;
 
   public override void _Ready()
   {
     _play = GetNode<Button>("%PlayButton");
     _settings = GetNode<Button>("%SettingsButton");
     _settings_menu = GetNode<SettingsMenu>("%SettingsMenu");
-    _quit = GetNode<Button>("%QuitButton");
+    _quitContainer = GetNode<QuitContainer>("%QuitContainer");
 
     _play.Pressed += HandlePlayPressed;
-    _quit.Pressed += HandleQuit;
 
     _settings.Pressed += () =>
     {
@@ -36,12 +34,12 @@ public partial class MainMenu : CanvasLayer
     };
     _settings_menu.Apply += () => UiStack.Instance.Pop();
 
-    UiStack.Instance.OnEmptyCancelPress += HandleQuit;
+    UiStack.Instance.OnEmptyCancelPress += _quitContainer.TriggerQuitConfirmation;
   }
 
   public override void _ExitTree()
   {
-    UiStack.Instance.OnEmptyCancelPress -= HandleQuit;
+    UiStack.Instance.OnEmptyCancelPress -= _quitContainer.TriggerQuitConfirmation;
   }
 
   private void HandlePlayPressed()
@@ -49,17 +47,5 @@ public partial class MainMenu : CanvasLayer
     Debug.Assert(GameScene != null, "Set a game scene in main menu");
 
     SceneManager.Instance.ChangeSceneToPackagedScene(GameScene, TransitionMode.Fade);
-  }
-
-  private void HandleQuit()
-  {
-    ConfirmationModal confirmationModal =
-      SceneConstants.ConfirmationModal.Instantiate<ConfirmationModal>();
-
-    confirmationModal.SetTitleText(TR.QUIT_CONFIRMATION_MESSAGE);
-    confirmationModal.SetConfirmText(TR.QUIT);
-    confirmationModal.ConfirmPressed += () => GetTree().Quit();
-
-    AddChild(confirmationModal);
   }
 }

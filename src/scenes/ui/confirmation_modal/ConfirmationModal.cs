@@ -1,6 +1,6 @@
 using Godot;
 
-namespace Martkeeper;
+namespace Martkeeper.UI;
 
 public partial class ConfirmationModal : Control
 {
@@ -82,13 +82,13 @@ public partial class ConfirmationModal : Control
 
   private void ConfirmAction()
   {
-    EmitSignalConfirmPressed();
     UiStack.Instance.Pop();
+    EmitSignalConfirmPressed();
   }
 
   private void CancelAction()
   {
-    EmitSignalCancelPressed();
     UiStack.Instance.Pop();
+    EmitSignalCancelPressed();
   }
 }

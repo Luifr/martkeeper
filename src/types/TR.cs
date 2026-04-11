@@ -21,6 +21,11 @@ public readonly struct TrKey
   public static readonly TrKey MUSIC_VOLUME_TITLE = "MUSIC_VOLUME_TITLE";
   public static readonly TrKey QUIT = "QUIT";
   public static readonly TrKey QUIT_CONFIRMATION_MESSAGE = "QUIT_CONFIRMATION_MESSAGE";
+  public static readonly TrKey PAUSED_TITLE = "PAUSED_TITLE";
+  public static readonly TrKey RESUME_TITLE = "RESUME_TITLE";
+  public static readonly TrKey QUIT_TO_MAIN_MENU = "QUIT_TO_MAIN_MENU";
+  public static readonly TrKey QUIT_TO_MENU_CONFIRMATION_MESSAGE =
+    "QUIT_TO_MENU_CONFIRMATION_MESSAGE";
 
   // --- Localization Logic ---
 
@@ -55,6 +60,10 @@ public static class TR
   public static TrKey MUSIC_VOLUME_TITLE => TrKey.MUSIC_VOLUME_TITLE;
   public static TrKey QUIT => TrKey.QUIT;
   public static TrKey QUIT_CONFIRMATION_MESSAGE => TrKey.QUIT_CONFIRMATION_MESSAGE;
+  public static TrKey PAUSED_TITLE => TrKey.PAUSED_TITLE;
+  public static TrKey RESUME_TITLE => TrKey.RESUME_TITLE;
+  public static TrKey QUIT_TO_MAIN_MENU => TrKey.QUIT_TO_MAIN_MENU;
+  public static TrKey QUIT_TO_MENU_CONFIRMATION_MESSAGE => TrKey.QUIT_TO_MENU_CONFIRMATION_MESSAGE;
 }
 
 public static class Locale

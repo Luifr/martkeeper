@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bk8hp8x6vyffy" path="res://src/scenes/main/main_menu/MainMenu.cs" id="1_0kd0q"]
 [ext_resource type="PackedScene" uid="uid://bunx2368ro35c" path="res://src/scenes/main/test_level.tscn" id="2_r7wpq"]
-[ext_resource type="PackedScene" path="res://src/scenes/main/settings/settings_menu.tscn" id="3_3dhrf"]
+[ext_resource type="PackedScene" uid="uid://2e5fssfcmaqx" path="res://src/scenes/ui/quit_container/quit_container.tscn" id="3_1ur28"]
+[ext_resource type="PackedScene" uid="uid://jv0rebivhiv7" path="res://src/scenes/ui/settings/settings_menu.tscn" id="3_3dhrf"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=1099749950]
 script = ExtResource("1_0kd0q")
@@ -46,11 +47,9 @@ custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 text = "Credits"
 
-[node name="QuitButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=693644124]
+[node name="QuitContainer" parent="PanelContainer/VBoxContainer" unique_id=1116496624 instance=ExtResource("3_1ur28")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
-text = "Quit"
 
 [node name="SettingsMenu" parent="." unique_id=1103460238 instance=ExtResource("3_3dhrf")]
 unique_name_in_owner = true

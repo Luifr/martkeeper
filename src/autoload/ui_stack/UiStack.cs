@@ -34,6 +34,12 @@ public partial class UiStack : Node
     Instance = this;
   }
 
+  public override void _Ready()
+  {
+    var pauseMenu = GD.Load<PackedScene>("uid://cf2g65wxefua5").Instantiate();
+    AddChild(pauseMenu);
+  }
+
   public int Push(Action closeHandler)
   {
     int newId = lastId;

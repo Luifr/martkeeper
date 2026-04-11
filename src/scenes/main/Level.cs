@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Godot;
 using Martkeeper.Entities;
+using Martkeeper.UI;
 
 namespace Martkeeper;
 
@@ -22,6 +23,13 @@ public partial class Level : Node
     {
       _cashRegister.PlayerInteraction();
     };
+
+    UiStack.Instance.OnEmptyCancelPress += PauseMenu.Instance.PauseGame;
+  }
+
+  public override void _ExitTree()
+  {
+    UiStack.Instance.OnEmptyCancelPress -= PauseMenu.Instance.PauseGame;
   }
 
   // Called every frame. 'delta' is the elapsed time since the previous frame.

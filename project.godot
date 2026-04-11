@@ -16,6 +16,10 @@ run/main_scene="uid://lnqo34g2guc4"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://assets/textures/icon.svg"
 
+[autoload]
+
+UiStack="*uid://dcvelcelspbs6"
+
 [display]
 
 window/size/viewport_width=1280
@@ -70,7 +74,6 @@ interact={
 
 [internationalization]
 
-rendering/root_node_auto_translate=false
 locale/translations=PackedStringArray("res://localization/translations.en.translation", "res://localization/translations.pt.translation", "res://localization/translations.de.translation")
 
 [layer_names]
