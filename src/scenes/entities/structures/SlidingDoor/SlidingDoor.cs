@@ -4,10 +4,10 @@ namespace Martkeeper.Entities;
 
 public partial class SlidingDoor : Node2D
 {
-  const string POSITION_PROPERTY = Node2D.PropertyName.Position.ToString();
+  string POSITION_PROPERTY = Node2D.PropertyName.Position.ToString();
   const float ANIMATION_DURATION = 1; // in seconds
 
-  public override vod _Ready()
+  public override void _Ready()
   {
     var leftDoor = GetNode<StaticBody2D>("%LeftDoor");
     var rightDoor = GetNode<StaticBody2D>("%RightDoor");
