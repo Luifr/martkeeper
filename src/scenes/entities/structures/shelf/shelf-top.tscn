@@ -19,8 +19,8 @@ size = Vector2(90, 334)
 texture = SubResource("AtlasTexture_tvnri")
 
 [node name="Bottom" parent="." index="2" unique_id=2077254259]
+process_mode = 4
 visible = false
-disabled = true
 
 [node name="Left" parent="." index="3" unique_id=328430350]
 position = Vector2(-45, 25)

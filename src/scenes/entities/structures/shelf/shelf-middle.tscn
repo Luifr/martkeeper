@@ -19,12 +19,12 @@ size = Vector2(90, 384)
 texture = SubResource("AtlasTexture_525kb")
 
 [node name="Top" parent="." index="1" unique_id=526992081]
+process_mode = 4
 visible = false
-disabled = true
 
 [node name="Bottom" parent="." index="2" unique_id=2077254259]
+process_mode = 4
 visible = false
-disabled = true
 
 [node name="Left" parent="." index="3" unique_id=328430350]
 shape = SubResource("RectangleShape2D_a5apg")
