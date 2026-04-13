@@ -62,8 +62,14 @@ public partial class Player : Person
     }
     if (gameObject is Shelf shelf)
     {
-      GD.Print("TryInteract: Hit Shelf");
-      TryInteractShelf(shelf);
+      var shapeId = _rayCast.GetColliderShape();
+      var ownerId = shelf.ShapeFindOwner(shapeId);
+      var shape = shelf.ShapeOwnerGetOwner(ownerId);
+      GD.Print("TryInteract: Hit Shelf " + shape.ToString());
+      if (shape is ShelfLocation shelfLocation)
+      {
+        TryInteractShelfLocation(shelfLocation);
+      }
       return;
     }
     if (gameObject is Stock stock)
@@ -76,15 +82,15 @@ public partial class Player : Person
     GD.Print("TryInteract: Else case, hit:", gameObject.GetType());
   }
 
-  private void TryInteractShelf(Shelf shelf)
+  private void TryInteractShelfLocation(ShelfLocation shelfLocation)
   {
-    if (LeftHand.CurrentItem?.NameKey == shelf.product.NameKey)
+    if (LeftHand.CurrentItem?.NameKey == shelfLocation.product.NameKey)
     {
-      PutItemFromHandToShelf(shelf, LeftHand);
+      PutItemFromHandToShelf(shelfLocation, LeftHand);
     }
-    if (RightHand.CurrentItem?.NameKey == shelf.product.NameKey)
+    if (RightHand.CurrentItem?.NameKey == shelfLocation.product.NameKey)
     {
-      PutItemFromHandToShelf(shelf, RightHand);
+      PutItemFromHandToShelf(shelfLocation, RightHand);
     }
   }
 
@@ -97,9 +103,9 @@ public partial class Player : Person
     RightHand.CurrentItem = stock.product;
   }
 
-  private void PutItemFromHandToShelf(Shelf shelf, Hand hand)
+  private void PutItemFromHandToShelf(ShelfLocation shelfLocation, Hand hand)
   {
-    shelf.ProductCount += 1;
+    shelfLocation.ProductCount += 1;
     hand.CurrentItem = null;
   }
 
