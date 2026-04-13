@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b6jp3i3cfb5nm" path="res://src/scenes/entities/structures/door/door.tscn" id="3_qir24"]
 [ext_resource type="PackedScene" uid="uid://dk1jvmrdlyrnk" path="res://src/scenes/entities/structures/shelf/shelf.tscn" id="4_qir24"]
 [ext_resource type="Resource" uid="uid://cy7rp7utpn5lg" path="res://data/products/banana.tres" id="5_1f7lt"]
+[ext_resource type="PackedScene" uid="uid://b80ca7wb41kbt" path="res://src/scenes/entities/structures/SlidingDoor/SlidingDoor.tscn" id="6_1ajo3"]
 [ext_resource type="PackedScene" uid="uid://cncs2ew01drtw" path="res://src/scenes/entities/structures/stock/stock.tscn" id="6_1f7lt"]
 [ext_resource type="PackedScene" uid="uid://0ndsj6hc1e01" path="res://src/scenes/entities/CashRegister/CashRegister.tscn" id="7_l5hkm"]
 [ext_resource type="PackedScene" uid="uid://bnyn3t8fsgnaj" path="res://src/scenes/entities/customer/customer.tscn" id="7_xv33n"]
@@ -29,7 +30,6 @@ product = ExtResource("5_1f7lt")
 
 [node name="Shelf" parent="Buildings" unique_id=1405568511 instance=ExtResource("4_qir24")]
 position = Vector2(207, 330)
-product = ExtResource("5_1f7lt")
 
 [node name="Door" parent="Buildings" unique_id=1754858698 node_paths=PackedStringArray("ConnectedBody") instance=ExtResource("3_qir24")]
 position = Vector2(688, 236)
@@ -40,10 +40,8 @@ position = Vector2(688.00006, 376.00006)
 rotation = -3.1410522
 ConnectedBody = NodePath("../../Walls/WallMiddleDown")
 
-[node name="DoorEntrance" parent="Buildings" unique_id=1105747233 node_paths=PackedStringArray("ConnectedBody") instance=ExtResource("3_qir24")]
+[node name="DoorEntrance" parent="Buildings" unique_id=1095645374 instance=ExtResource("6_1ajo3")]
 position = Vector2(537, 629)
-rotation = 1.5707964
-ConnectedBody = NodePath("../../Walls/WallDownRight")
 
 [node name="CashRegister" parent="Buildings" unique_id=814154694 instance=ExtResource("7_l5hkm")]
 unique_name_in_owner = true
@@ -65,14 +63,14 @@ rotation = 1.5707964
 scale = Vector2(1, 3.6799974)
 
 [node name="WallDownLeft" parent="Walls" unique_id=2116195752 instance=ExtResource("2_5fulm")]
-position = Vector2(249.99998, 629)
+position = Vector2(205.99997, 629)
 rotation = 1.5707964
-scale = Vector2(1, 1.4518577)
+scale = Vector2(1, 1.3)
 
 [node name="WallDownRight" parent="Walls" unique_id=1452821042 instance=ExtResource("2_5fulm")]
-position = Vector2(860, 629)
+position = Vector2(899, 629)
 rotation = 1.5707964
-scale = Vector2(1, 1.6918596)
+scale = Vector2(1, 1.5)
 
 [node name="WallMiddleUp" parent="Walls" unique_id=1524503806 instance=ExtResource("2_5fulm")]
 position = Vector2(688, 93)
