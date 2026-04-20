@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://b6jp3i3cfb5nm" path="res://src/scenes/entities/structures/door/door.tscn" id="3_qir24"]
 [ext_resource type="PackedScene" uid="uid://dk1jvmrdlyrnk" path="res://src/scenes/entities/structures/shelf/shelf.tscn" id="4_qir24"]
 [ext_resource type="Resource" uid="uid://cy7rp7utpn5lg" path="res://data/products/banana.tres" id="5_1f7lt"]
-[ext_resource type="PackedScene" uid="uid://b80ca7wb41kbt" path="res://src/scenes/entities/structures/SlidingDoor/SlidingDoor.tscn" id="6_1ajo3"]
+[ext_resource type="PackedScene" uid="uid://b80ca7wb41kbt" path="res://src/scenes/entities/structures/SlidingDoor/sliding_door.tscn" id="6_1ajo3"]
 [ext_resource type="PackedScene" uid="uid://cncs2ew01drtw" path="res://src/scenes/entities/structures/stock/stock.tscn" id="6_1f7lt"]
 [ext_resource type="PackedScene" uid="uid://0ndsj6hc1e01" path="res://src/scenes/entities/CashRegister/CashRegister.tscn" id="7_l5hkm"]
 [ext_resource type="PackedScene" uid="uid://bnyn3t8fsgnaj" path="res://src/scenes/entities/customer/customer.tscn" id="7_xv33n"]
+[ext_resource type="PackedScene" uid="uid://c86rscxwu0sdy" path="res://src/scenes/entities/structures/shelf/shelf-middle.tscn" id="8_qqa5n"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xv33n"]
 vertices = PackedVector2Array(710.97656, 434.89063, 665.02344, 434.89063, 263, 432, 263, 228, 665.0781, 177.60156, 710.9219, 177.60156, 904, 208, 904, 412, 1104, 47, 1104, 600, 1016, 412, 1016, 208, 710.9219, 47, 710.97656, 600, 592.7422, 785.35156, 468.42188, 789.6328, 473.7578, 658, 477.78125, 658, 588.72656, 629.6719, 477.78125, 600, 596.21875, 600, 596.21875, 629.89844, 665.02344, 600, 47, 600, 151, 432, 47, 47, 151, 228, 665.0781, 47)
@@ -28,9 +29,6 @@ script = ExtResource("1_8rsi3")
 position = Vector2(960, 310)
 product = ExtResource("5_1f7lt")
 
-[node name="Shelf" parent="Buildings" unique_id=1405568511 instance=ExtResource("4_qir24")]
-position = Vector2(207, 330)
-
 [node name="Door" parent="Buildings" unique_id=1754858698 node_paths=PackedStringArray("ConnectedBody") instance=ExtResource("3_qir24")]
 position = Vector2(688, 236)
 ConnectedBody = NodePath("../../Walls/WallMiddleUp")
@@ -46,6 +44,18 @@ position = Vector2(537, 629)
 [node name="CashRegister" parent="Buildings" unique_id=814154694 instance=ExtResource("7_l5hkm")]
 unique_name_in_owner = true
 position = Vector2(470, 104)
+
+[node name="Shelves" type="Node" parent="Buildings" unique_id=249279085]
+unique_name_in_owner = true
+
+[node name="Shelf" parent="Buildings/Shelves" unique_id=1405568511 instance=ExtResource("4_qir24")]
+position = Vector2(115, 232)
+scale = Vector2(1, 0.9968861)
+selfInitializeProducts = true
+
+[node name="Shelf2" parent="Buildings/Shelves" unique_id=1061509731 instance=ExtResource("8_qqa5n")]
+position = Vector2(355, 232)
+selfInitializeProducts = true
 
 [node name="Walls" type="Node" parent="." unique_id=1845359706]
 
@@ -84,7 +94,7 @@ scale = Vector2(0.6831563, 0.5474157)
 position = Vector2(587, 321)
 
 [node name="Customer" parent="." unique_id=275375801 instance=ExtResource("7_xv33n")]
-position = Vector2(428, 555)
+position = Vector2(291, 566)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=92387988]
 visible = false
@@ -92,4 +102,4 @@ navigation_polygon = SubResource("NavigationPolygon_xv33n")
 
 [node name="Player" parent="." unique_id=1857102111 instance=ExtResource("1_6oyos")]
 unique_name_in_owner = true
-position = Vector2(469, 324)
+position = Vector2(315, 159)

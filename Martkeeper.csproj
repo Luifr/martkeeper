@@ -4,7 +4,11 @@
     <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net9.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
   </PropertyGroup>
-  <Target Name="GenerateTranslations" BeforeTargets="BeforeBuild">
+  <Target
+    Name="PreBuildScripts"
+    BeforeTargets="BeforeBuild"
+    Condition="'$(SkipPreBuild)' != 'true'"
+  >
     <Exec Command="dotnet t4 $(ProjectDir)/src/types/TR.tt" />
     <Exec Command="dotnet t4 $(ProjectDir)/src/types/InputAction.tt" />
     <Exec Command="dotnet csharpier format ." />

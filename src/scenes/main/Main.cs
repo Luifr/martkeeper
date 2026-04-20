@@ -15,8 +15,6 @@ public partial class Main : Node
     CleanUpEditorTools();
   }
 
-  public override void _Process(double delta) { }
-
   private void SetupLanguage()
   {
     if (language == "automatic")

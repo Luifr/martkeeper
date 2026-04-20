@@ -12,8 +12,6 @@ public partial class CashRegister : StaticBody2D
 
   public override void _Ready() { }
 
-  public override void _Process(double delta) { }
-
   public void PlayerInteraction()
   {
     // TODO - Check wheter the customer is actually in front of the cash register.

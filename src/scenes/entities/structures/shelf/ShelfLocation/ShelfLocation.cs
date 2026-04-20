@@ -5,8 +5,19 @@ namespace Martkeeper.Entities;
 
 public partial class ShelfLocation : CollisionShape2D
 {
+  private Product _product;
+
   [Export]
-  public Product product;
+  public Product Product
+  {
+    get => _product;
+    set
+    {
+      _product = value;
+      _productSprite.Texture = value.Texture;
+      UpdateProductCountLabel();
+    }
+  }
 
   public int _productCount = 1;
   public int ProductCount
@@ -22,21 +33,17 @@ public partial class ShelfLocation : CollisionShape2D
   private Sprite2D _productSprite;
   private Label _productCountLabel;
 
-  // Called when the node enters the scene tree for the first time.
   public override void _Ready()
   {
     _productSprite = GetNode<Sprite2D>("%ProductSprite");
     _productCountLabel = GetNode<Label>("%ProductCount");
 
-    if (product != null)
+    if (Product != null)
     {
-      _productSprite.Texture = product.Texture;
+      _productSprite.Texture = Product.Texture;
       UpdateProductCountLabel();
     }
   }
-
-  // Called every frame. 'delta' is the elapsed time since the previous frame.
-  public override void _Process(double delta) { }
 
   private void UpdateProductCountLabel()
   {
