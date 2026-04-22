@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Diagnostics;
 using Godot;
 using Martkeeper.Constants;
 
@@ -24,7 +23,8 @@ public partial class Shelf : StaticBody2D
     foreach (var child in GetChildren())
     {
       var shelfLocation = child as ShelfLocation;
-      if (shelfLocation == null) return;
+      if (shelfLocation == null)
+        return;
 
       shelfLocation.Product = ResourceConstants.AllProductsResource.Products.PickRandom();
     }
@@ -37,7 +37,8 @@ public partial class Shelf : StaticBody2D
     foreach (Node2D marker2D in children)
     {
       var shelfLocation = marker2D.GetParent() as ShelfLocation;
-      if (shelfLocation == null) return;
+      if (shelfLocation == null)
+        return;
 
       var productKey = shelfLocation.Product.NameKey;
       if (!productToGlobalPositions.ContainsKey(productKey))
