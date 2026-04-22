@@ -24,7 +24,7 @@ public partial class Shelf : StaticBody2D
     {
       var shelfLocation = child as ShelfLocation;
       if (shelfLocation == null)
-        return;
+        continue;
 
       shelfLocation.Product = ResourceConstants.AllProductsResource.Products.PickRandom();
     }
@@ -38,7 +38,7 @@ public partial class Shelf : StaticBody2D
     {
       var shelfLocation = marker2D.GetParent() as ShelfLocation;
       if (shelfLocation == null)
-        return;
+        continue;
 
       var productKey = shelfLocation.Product.NameKey;
       if (!productToGlobalPositions.ContainsKey(productKey))
