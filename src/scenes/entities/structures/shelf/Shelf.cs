@@ -34,16 +34,16 @@ public partial class Shelf : StaticBody2D
   {
     var children = FindChildren("Marker2D", "Marker2D");
 
-    foreach (var child in children)
+    foreach (Node2D marker2D in children)
     {
-      var shelfLocation = child.GetParent() as ShelfLocation;
+      var shelfLocation = marker2D.GetParent() as ShelfLocation;
       if (shelfLocation == null) return;
 
       var productKey = shelfLocation.Product.NameKey;
       if (!productToGlobalPositions.ContainsKey(productKey))
         productToGlobalPositions.Add(productKey, new List<Vector2>());
 
-      productToGlobalPositions[productKey].Add(marker.GlobalPosition);
+      productToGlobalPositions[productKey].Add(marker2D.GlobalPosition);
     }
   }
 }
