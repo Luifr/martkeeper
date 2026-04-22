@@ -84,11 +84,11 @@ public partial class Player : Person
 
   private void TryInteractShelfLocation(ShelfLocation shelfLocation)
   {
-    if (LeftHand.CurrentItem?.NameKey == shelfLocation.product.NameKey)
+    if (LeftHand.CurrentItem?.NameKey == shelfLocation.Product.NameKey)
     {
       PutItemFromHandToShelf(shelfLocation, LeftHand);
     }
-    if (RightHand.CurrentItem?.NameKey == shelfLocation.product.NameKey)
+    if (RightHand.CurrentItem?.NameKey == shelfLocation.Product.NameKey)
     {
       PutItemFromHandToShelf(shelfLocation, RightHand);
     }

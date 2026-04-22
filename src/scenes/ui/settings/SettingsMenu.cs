@@ -15,6 +15,4 @@ public partial class SettingsMenu : Control
 
     _accept.Pressed += () => EmitSignal(SignalName.Apply);
   }
-
-  public override void _Process(double delta) { }
 }

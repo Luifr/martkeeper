@@ -1,10 +1,49 @@
+using System.Collections.Generic;
+using System.Diagnostics;
 using Godot;
+using Martkeeper.Constants;
 
 namespace Martkeeper.Entities;
 
 public partial class Shelf : StaticBody2D
 {
-  public override void _Ready() { }
+  [Export]
+  private bool selfInitializeProducts;
 
-  public override void _Process(double delta) { }
+  public Dictionary<string, List<Vector2>> productToGlobalPositions = new();
+
+  public override void _Ready()
+  {
+    if (selfInitializeProducts)
+      InitializeShelfLocations();
+    InitializeProductPositions();
+  }
+
+  private void InitializeShelfLocations()
+  {
+    foreach (var child in GetChildren())
+    {
+      var shelfLocation = child as ShelfLocation;
+      if (shelfLocation == null) return;
+
+      shelfLocation.Product = ResourceConstants.AllProductsResource.Products.PickRandom();
+    }
+  }
+
+  private void InitializeProductPositions()
+  {
+    var children = FindChildren("Marker2D", "Marker2D");
+
+    foreach (var child in children)
+    {
+      var shelfLocation = child.GetParent() as ShelfLocation;
+      if (shelfLocation == null) return;
+
+      var productKey = shelfLocation.Product.NameKey;
+      if (!productToGlobalPositions.ContainsKey(productKey))
+        productToGlobalPositions.Add(productKey, new List<Vector2>());
+
+      productToGlobalPositions[productKey].Add(marker.GlobalPosition);
+    }
+  }
 }

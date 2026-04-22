@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://wrnu6vat7jtm"]
+[gd_scene format=3 uid="uid://c86rscxwu0sdy"]
 
 [ext_resource type="PackedScene" uid="uid://dk1jvmrdlyrnk" path="res://src/scenes/entities/structures/shelf/shelf.tscn" id="1_a5apg"]
 [ext_resource type="Texture2D" uid="uid://gi2fq47lgxly" path="res://assets/textures/Shelf.png" id="2_i51fs"]
@@ -8,10 +8,10 @@ atlas = ExtResource("2_i51fs")
 region = Rect2(64, 0, 32, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a5apg"]
-size = Vector2(90, 384)
+size = Vector2(62, 256)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i51fs"]
-size = Vector2(90, 384)
+size = Vector2(58, 256)
 
 [node name="Shelf" unique_id=1405568511 instance=ExtResource("1_a5apg")]
 

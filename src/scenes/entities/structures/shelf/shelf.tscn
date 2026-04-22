@@ -3,50 +3,56 @@
 [ext_resource type="Script" uid="uid://bv4i4flv0n2r3" path="res://src/scenes/entities/structures/shelf/Shelf.cs" id="1_wu2b2"]
 [ext_resource type="Texture2D" uid="uid://gi2fq47lgxly" path="res://assets/textures/Shelf.png" id="2_kfrye"]
 [ext_resource type="PackedScene" uid="uid://d06moltwxi4dp" path="res://src/scenes/entities/structures/shelf/ShelfLocation/ShelfLocation.tscn" id="3_1renn"]
-[ext_resource type="Resource" uid="uid://cy7rp7utpn5lg" path="res://data/products/banana.tres" id="4_cxefc"]
-[ext_resource type="Resource" uid="uid://clsmvosofxubm" path="res://data/products/bread.tres" id="5_e7i1t"]
-[ext_resource type="Resource" uid="uid://bkrrpuhu8kwwd" path="res://data/products/orange_juice.tres" id="6_uc4ed"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1renn"]
 atlas = ExtResource("2_kfrye")
 region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i17jx"]
-size = Vector2(180, 44)
+size = Vector2(120, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7i1t"]
-size = Vector2(180, 44)
+size = Vector2(120, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uc4ed"]
-size = Vector2(90, 284)
+size = Vector2(62, 188)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02ui1"]
-size = Vector2(90, 284)
+size = Vector2(58, 188)
 
-[node name="Shelf" type="StaticBody2D" unique_id=1405568511 node_paths=PackedStringArray("ShelfLocations") groups=["NavigationBlock"]]
+[node name="Shelf" type="StaticBody2D" unique_id=1405568511 groups=["NavigationBlock"]]
 collision_mask = 0
 script = ExtResource("1_wu2b2")
 
 [node name="BackgroundSprite" type="Sprite2D" parent="." unique_id=410791398]
-scale = Vector2(6, 6)
+scale = Vector2(4, 4)
 texture = SubResource("AtlasTexture_1renn")
+centered = false
 
 [node name="Top" parent="." unique_id=526992081 instance=ExtResource("3_1renn")]
-position = Vector2(0, -164)
+position = Vector2(64, 19)
 shape = SubResource("RectangleShape2D_i17jx")
-product = ExtResource("4_cxefc")
+
+[node name="Marker2D" type="Marker2D" parent="Top" unique_id=1308705562]
+position = Vector2(0, -40)
 
 [node name="Bottom" parent="." unique_id=2077254259 instance=ExtResource("3_1renn")]
-position = Vector2(0, 164)
+position = Vector2(64, 237)
 shape = SubResource("RectangleShape2D_e7i1t")
-product = ExtResource("5_e7i1t")
+
+[node name="Marker2D" type="Marker2D" parent="Bottom" unique_id=1399651402]
+position = Vector2(0, 40)
 
 [node name="Left" parent="." unique_id=328430350 instance=ExtResource("3_1renn")]
-position = Vector2(-45, 0)
+position = Vector2(35, 128)
 shape = SubResource("RectangleShape2D_uc4ed")
-product = ExtResource("6_uc4ed")
+
+[node name="Marker2D" type="Marker2D" parent="Left" unique_id=1702109831]
+position = Vector2(-60, 0)
 
 [node name="Right" parent="." unique_id=2028811099 instance=ExtResource("3_1renn")]
-position = Vector2(45, 0)
+position = Vector2(95, 128)
 shape = SubResource("RectangleShape2D_02ui1")
-product = ExtResource("4_cxefc")
+
+[node name="Marker2D" type="Marker2D" parent="Right" unique_id=1526238177]
+position = Vector2(60, 0)

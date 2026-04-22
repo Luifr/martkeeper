@@ -34,6 +34,12 @@ List warnings that it wont fix automatically
 dotnet format Martkeeper.sln --verify-no-changes
 ```
 
+To watch file changes and prevent having to manually build the project in godot editor run
+
+```bash
+dotnet watch build /p:SkipPreBuild=true
+```
+
 ## Project
 
 ### Translations
